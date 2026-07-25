@@ -45,10 +45,18 @@ strong { color: var(--accent); font-weight: 600; }
   height: 66px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  position: relative;
   gap: 20px;
 }
-.brand { display: flex; align-items: baseline; gap: 9px; white-space: nowrap; }
+.brand {
+  display: flex; align-items: baseline; gap: 9px; white-space: nowrap;
+  position: absolute; left: var(--pad); top: 50%;
+  transform: translateY(-50%);
+  opacity: 0; pointer-events: none;
+  transition: opacity .35s ease;
+}
+.site-header.scrolled .brand { opacity: 1; pointer-events: auto; }
 .brand-jp { font-weight: 700; font-size: 1.02rem; letter-spacing: .02em; }
 .brand-en {
   font-family: var(--font-en);
@@ -120,6 +128,29 @@ strong { color: var(--accent); font-weight: 600; }
   margin-top: 22px;
   padding-left: .32em; /* offset last-letter tracking */
 }
+.hero-footer {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px var(--pad);
+}
+.hf-left {
+  font-family: var(--font-en);
+  font-size: .78rem;
+  color: var(--ink-faint);
+  letter-spacing: .02em;
+}
+.hf-social { display: flex; align-items: center; gap: 16px; }
+.hf-social a {
+  display: inline-flex;
+  color: var(--ink-faint);
+  transition: color .2s, transform .2s;
+}
+.hf-social a:hover { color: var(--accent); transform: translateY(-2px); }
+.hf-social svg { width: 18px; height: 18px; fill: currentColor; }
 
 /* ===== Sections ===== */
 .section {
@@ -267,7 +298,9 @@ strong { color: var(--accent); font-weight: 600; }
 
 /* ===== Responsive ===== */
 @media (max-width: 860px) {
-  .nav-toggle { display: flex; }
+  .nav-inner { justify-content: flex-start; }
+  .brand { position: static; transform: none; opacity: 1; pointer-events: auto; }
+  .nav-toggle { display: flex; position: absolute; right: var(--pad); top: 50%; transform: translateY(-50%); }
   .nav-links {
     position: fixed;
     top: 66px; left: 0; right: 0;
