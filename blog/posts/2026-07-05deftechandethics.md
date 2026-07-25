@@ -1,13 +1,10 @@
-「防衛テックの倫理」をめぐる倫理
-
-\---  
+---  
 title: "「防衛テックの倫理」をめぐる倫理"  
 date: 2026-07-05  
-category: "essay"  
+category: "Essay"  
 excerpt: "先日、De-Siloが開催した「〈防衛テック〉の倫理」というイベントに参加してきた。"  
-thumbnail: images/deftechandethics.png  
-\---
-
+thumbnail: images/deftechandethics.jpg  
+---
 先日、De-Siloが開催した「[〈防衛テック〉の倫理](https://open.substack.com/pub/desilo/p/academic-insights-26?r=1mxhp2&utm_campaign=post-expanded-share&utm_medium=post%20viewer)」というイベントに参加してきた。話された内容の大枠は、同じくDe-Siloが制作しているPodacst「2020s」の「[〈防衛テック〉の倫理とナラティブ](https://open.substack.com/pub/desilo/p/2020s-ep6?r=1mxhp2&utm_campaign=post-expanded-share&utm_medium=post%20viewer)」回で紹介されている内容から始まり、登壇者それぞれの専門から防衛テックについて語られていくという形で進行した。
 
 とても刺激的で、防衛テック業界に身を置く一人として、とても考えさせられることが多かった一方、テーマの複雑さ、大きさ、そして新しさもあってか、雑駁な印象も拭えなかった。そこで今回は思考のメモとして、2026年の7月に考えていることの記録として、「防衛テック」（以降、DefTechと表記）について自分なりにまとめてみたい。

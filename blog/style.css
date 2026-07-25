@@ -42,13 +42,19 @@ body {
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; height: auto; }
 
-/* ===== Header (centered wordmark band, sakana-style) ===== */
+/* ===== Header (left-aligned wordmark band) ===== */
 .blog-header {
   position: relative;
   border-bottom: 1px solid var(--line);
   background: var(--bg-alt);
-  padding: 52px var(--pad);
-  text-align: center;
+  padding: 48px 0;
+  text-align: left;
+}
+.blog-header .blog-logo {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--pad);
+  display: block;
 }
 
 /* ===== Theme toggle ===== */
