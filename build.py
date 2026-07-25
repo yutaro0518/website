@@ -57,21 +57,21 @@ def nav(slug):
     in_about = slug in PAGES
     return f'''      <nav class="nav-links">
         <div class="nav-item has-dropdown">
-          <a href="about.html"{a(in_about)}>About me <span class="caret" aria-hidden="true">▾</span></a>
+          <a href="/about/"{a(in_about)}>About me <span class="caret" aria-hidden="true">▾</span></a>
           <div class="dropdown"><div class="dropdown-inner">
-            <a href="about.html"{a(slug == "about")}>About</a>
-            <a href="bio.html"{a(slug == "bio")}>Bio</a>
-            <a href="research.html"{a(slug == "research")}>Research</a>
+            <a href="/about/"{a(slug == "about")}>About</a>
+            <a href="/bio/"{a(slug == "bio")}>Bio</a>
+            <a href="/research/"{a(slug == "research")}>Research</a>
           </div></div>
         </div>
-        <a href="blog/?cat=Essay">Thought</a>
+        <a href="/blog/?cat=Essay">Thought</a>
         <div class="nav-item has-dropdown">
-          <a href="activities.html">Activities <span class="caret" aria-hidden="true">▾</span></a>
+          <a href="/activities/">Activities <span class="caret" aria-hidden="true">▾</span></a>
           <div class="dropdown"><div class="dropdown-inner">
             <a href="https://humanresearchcollective.substack.com/" target="_blank" rel="noopener">Human Research Collective<span class="ext">↗</span></a>
           </div></div>
         </div>
-        <a href="blog/">Blog</a>
+        <a href="/blog/">Blog</a>
       </nav>'''
 
 
@@ -89,13 +89,13 @@ def render(slug, meta, body, css_v, js_v):
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v={css_v}" />
+  <link rel="stylesheet" href="/style.css?v={css_v}" />
 </head>
 <body>
 
   <header class="site-header scrolled" id="top">
     <div class="nav-inner">
-      <a href="index.html" class="brand">
+      <a href="/" class="brand">
         <span class="brand-jp">上野裕太郎</span>
         <span class="brand-en">Yutaro&nbsp;UENO</span>
       </a>
@@ -127,7 +127,7 @@ def render(slug, meta, body, css_v, js_v):
     </div>
   </footer>
 
-  <script src="script.js?v={js_v}"></script>
+  <script src="/script.js?v={js_v}"></script>
 </body>
 </html>
 '''
@@ -137,9 +137,12 @@ def main():
     css_v, js_v = asset_v("style.css"), asset_v("script.js")
     for slug in PAGES:
         meta, body = parse(CONTENT / f"{slug}.md")
-        (ROOT / f"{slug}.html").write_text(
+        # クリーンURL: /about/ 等（<slug>/index.html）
+        out_dir = ROOT / slug
+        out_dir.mkdir(exist_ok=True)
+        (out_dir / "index.html").write_text(
             render(slug, meta, body, css_v, js_v), encoding="utf-8")
-        print(f"  生成: {slug}.html")
+        print(f"  生成: {slug}/index.html")
     print(f"\n✅ 完了: {len(PAGES)}ページを content/*.md から生成しました。")
 
 
