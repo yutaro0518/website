@@ -6,3 +6,8 @@ __pycache__/
 
 # 自動生成されるブログHTML（ソースは blog/posts/*.md。CI が build.py でビルドします）
 /blog/*.html
+
+# 自動生成されるメインページ（ソースは content/*.md）
+/about.html
+/bio.html
+/research.html
