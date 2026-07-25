@@ -97,52 +97,28 @@ strong { color: var(--accent); font-weight: 600; }
 
 /* ===== Hero ===== */
 .hero {
-  padding: clamp(64px, 12vw, 140px) var(--pad) clamp(56px, 9vw, 110px);
-  max-width: var(--max);
-  margin: 0 auto;
-  position: relative;
+  min-height: calc(100vh - 66px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(48px, 10vw, 96px) var(--pad);
+  text-align: center;
 }
-.hero-inner { max-width: 800px; }
-.hero-eyebrow {
-  font-family: var(--font-en);
-  font-size: .8rem;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  color: var(--accent);
-  font-weight: 600;
-  margin-bottom: 26px;
-}
-.hero-title {
-  font-size: clamp(2.1rem, 6vw, 4rem);
+.hero-inner { max-width: 900px; }
+.hero-name {
+  font-size: clamp(3rem, 13vw, 8rem);
   font-weight: 700;
-  line-height: 1.28;
-  letter-spacing: .01em;
-  margin-bottom: 30px;
+  letter-spacing: .04em;
+  line-height: 1.05;
 }
-.hero-lead {
-  font-size: clamp(1rem, 1.6vw, 1.12rem);
-  color: var(--ink-soft);
-  max-width: 640px;
-  margin-bottom: 38px;
-}
-.hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 46px; }
-.btn {
-  display: inline-flex; align-items: center;
-  padding: 13px 26px;
-  border-radius: 999px;
-  font-size: .9rem; font-weight: 600;
-  transition: transform .18s, background .2s, color .2s, border-color .2s;
-}
-.btn-primary { background: var(--ink); color: #fff; }
-.btn-primary:hover { background: var(--accent); transform: translateY(-2px); }
-.btn-ghost { border: 1px solid var(--line); color: var(--ink); }
-.btn-ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
-.hero-roles {
-  font-size: .82rem;
+.hero-reading {
+  font-family: var(--font-en);
+  font-size: clamp(.85rem, 2vw, 1.05rem);
+  letter-spacing: .32em;
+  text-transform: uppercase;
   color: var(--ink-faint);
-  letter-spacing: .02em;
-  padding-top: 26px;
-  border-top: 1px solid var(--line);
+  margin-top: 22px;
+  padding-left: .32em; /* offset last-letter tracking */
 }
 
 /* ===== Sections ===== */
