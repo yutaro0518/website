@@ -11,12 +11,19 @@ posts/ 内の *.md を読み込み、記事ページと index.html を生成す�
 
 import re
 import html
+import hashlib
 from pathlib import Path
 import markdown
 
 ROOT = Path(__file__).parent          # blog/ ディレクトリ
 POSTS_DIR = ROOT / "posts"
 SITE_ROOT = ROOT.parent               # リポジトリのルート
+
+
+def css_version():
+    """style.css の内容ハッシュ。変更時だけURLが変わりキャッシュを更新できる。"""
+    p = ROOT / "style.css"
+    return hashlib.md5(p.read_bytes()).hexdigest()[:8] if p.exists() else "1"
 
 # 一覧上部のカテゴリナビ（表示順）
 CATEGORIES = [
@@ -36,7 +43,7 @@ def head(title):
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v={css_version()}" />
 </head>
 <body>"""
 

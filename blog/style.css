@@ -47,7 +47,7 @@ img { max-width: 100%; height: auto; }
   position: relative;
   border-bottom: 1px solid var(--line);
   background: var(--bg-alt);
-  padding: 18px var(--pad);
+  padding: 10px var(--pad);
   text-align: left;
 }
 .blog-header .blog-logo {
@@ -78,7 +78,7 @@ img { max-width: 100%; height: auto; }
 :root[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
 :root[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
 .blog-logo {
-  font-size: clamp(24px, 4vw, 32px);
+  font-size: clamp(21px, 3vw, 26px);
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--ink);
