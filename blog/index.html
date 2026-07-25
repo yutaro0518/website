@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>上野裕太郎 Blog</title>
+  <script>(function(){try{var t=localStorage.getItem('theme');if(!t){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet" />
@@ -11,6 +12,10 @@
 </head>
 <body>
   <header class="blog-header">
+    <button class="theme-toggle" type="button" aria-label="ダークモード切り替え">
+      <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
     <div class="blog-header__inner">
       <a href="../index.html" class="blog-home">← 上野裕太郎</a>
       <a href="index.html" class="blog-logo">Blog</a>
@@ -79,5 +84,15 @@
       </a>
     </div>
   </footer>
+  <script>
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest(".theme-toggle");
+    if (!b) return;
+    var cur = document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
+    var next = cur === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+    try { localStorage.setItem("theme", next); } catch (err) {}
+  });
+  </script>
 </body>
 </html>

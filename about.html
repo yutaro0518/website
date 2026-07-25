@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <script>(function(){try{var t=localStorage.getItem('theme');if(!t){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 </head>
 <body>
 
@@ -20,6 +21,10 @@
       </a>
       <button class="nav-toggle" aria-label="メニュー" aria-expanded="false">
         <span></span><span></span><span></span>
+      </button>
+      <button class="theme-toggle" type="button" aria-label="ダークモード切り替え">
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
       </button>
       <nav class="nav-links">
         <div class="nav-item has-dropdown">
@@ -47,30 +52,16 @@
       <h1>About me</h1>
     </div>
 
-    <div class="about-grid">
-      <div class="about-lead">
-        <p class="big">
-          2000年、東京生まれ。好き嫌いがはっきりしていて、
-          <strong>本音・本心で、ありのままでいたい</strong>と思っています。
-        </p>
-      </div>
-      <div class="about-text">
-        <p>
-          広く浅い付き合いよりも、信頼できる少数の人たちとの深い関わりのなかに、いちばんの充足を感じるタイプです。社交の場ではどちらかというと内向的ですが、その分、ひとつのことをじっくり考えることを大切にしています。
-        </p>
-        <p>
-          写真を撮ること、コーヒー、そして読書。この三つが、日々を前に進める原動力になっています。理論社会学を土台に、いまはAIガバナンスや気候変動といった、社会とテクノロジーが交差する領域に関心を広げています。
-        </p>
-        <ul class="chips">
-          <li>理論社会学</li>
-          <li>社会システム理論</li>
-          <li>AIガバナンス</li>
-          <li>気候変動</li>
-          <li>写真</li>
-          <li>珈琲</li>
-          <li>読書</li>
-        </ul>
-      </div>
+    <div class="prose">
+      <p>
+        2000年、東京生まれ。好き嫌いがはっきりしていて、本音・本心で、ありのままでいたいと思っています。
+      </p>
+      <p>
+        広く浅い付き合いよりも、信頼できる少数の人たちとの深い関わりのなかに、いちばんの充足を感じるタイプです。社交の場ではどちらかというと内向的ですが、その分、ひとつのことをじっくり考えることを大切にしています。
+      </p>
+      <p>
+        写真を撮ること、コーヒー、そして読書。この三つが、日々を前に進める原動力になっています。理論社会学を土台に、いまはAIガバナンスや気候変動といった、社会とテクノロジーが交差する領域に関心を広げています。
+      </p>
     </div>
   </main>
 
