@@ -38,8 +38,10 @@ if (header && hero) {
 document.addEventListener('click', (e) => {
   const btn = e.target.closest('.theme-toggle');
   if (!btn) return;
-  const cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
-  const next = cur === 'dark' ? 'light' : 'dark';
+  let next;
+  if (e.target.closest('.tt-d')) next = 'dark';
+  else if (e.target.closest('.tt-l')) next = 'light';
+  else next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
   document.documentElement.setAttribute('data-theme', next);
   try { localStorage.setItem('theme', next); } catch (err) {}
 });

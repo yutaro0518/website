@@ -213,16 +213,27 @@ FILTER_JS = """  <script>
       if (empty) empty.hidden = shown !== 0;
     }
 
-    nav.addEventListener("click", function (e) {
-      var a = e.target.closest("a[data-cat]");
-      if (!a) return;
-      e.preventDefault();
+    function activate(a) {
       nav.querySelectorAll("a").forEach(function (x) {
         x.classList.remove("is-active");
       });
       a.classList.add("is-active");
       apply(a.getAttribute("data-cat"));
+    }
+
+    nav.addEventListener("click", function (e) {
+      var a = e.target.closest("a[data-cat]");
+      if (!a) return;
+      e.preventDefault();
+      activate(a);
     });
+
+    // ディープリンク: ?cat=Essay で該当カテゴリを選択した状態で開く
+    var want = new URLSearchParams(location.search).get("cat");
+    if (want) {
+      var target = nav.querySelector('a[data-cat="' + want.replace(/[^\\w-]/g, "") + '"]');
+      if (target) activate(target);
+    }
   })();
   </script>"""
 

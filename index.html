@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=7c404a2d" />
   <script>(function(){try{var t=localStorage.getItem('theme');if(!t){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 </head>
 <body>
@@ -24,9 +24,9 @@
       <button class="nav-toggle" aria-label="メニュー" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
-      <button class="theme-toggle" type="button" aria-label="ダークモード切り替え">
-        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      <button class="theme-toggle" type="button" aria-label="テーマ切り替え（ライト / ダーク）">
+        <span class="tt-opt tt-l">L</span>
+        <span class="tt-opt tt-d">D</span>
       </button>
 
       <nav class="nav-links">
@@ -37,7 +37,7 @@
             <a href="research.html">Research</a>
           </div></div>
         </div>
-        <a href="https://yutaro0518.substack.com/t/log" target="_blank" rel="noopener">Thought</a>
+        <a href="blog/index.html?cat=Essay">Thought</a>
         <div class="nav-item has-dropdown">
           <a href="activities.html">Activities <span class="caret" aria-hidden="true">▾</span></a>
           <div class="dropdown"><div class="dropdown-inner">
@@ -69,6 +69,6 @@
     </div>
   </section>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=2de64fe7"></script>
 </body>
 </html>
