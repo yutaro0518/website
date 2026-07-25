@@ -288,7 +288,7 @@ strong { color: var(--accent); font-weight: 600; }
 }
 
 /* Prose (plain body text — About me) */
-.prose { max-width: 780px; }
+.prose { max-width: none; }   /* 見出し下の横線と同じ幅に */
 .prose p {
   margin-bottom: 22px;
   color: var(--ink-soft);

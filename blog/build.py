@@ -47,11 +47,7 @@ def header_html():
       <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
       <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
     </button>
-    <div class="blog-header__inner">
-      <a href="../index.html" class="blog-home">← 上野裕太郎</a>
-      <a href="index.html" class="blog-logo">Blog</a>
-      <span class="blog-logo__sub">Yutaro UENO</span>
-    </div>
+    <a href="../index.html" class="blog-logo">上野裕太郎</a>
   </header>"""
 
 
@@ -179,9 +175,7 @@ def render_index(posts):
     </article>""")
 
     empty = '    <p class="post-empty" hidden>このカテゴリの記事はまだありません。</p>'
-    body = ('  <div class="blog-intro"><h1>Blog</h1>'
-            '<p>理論社会学・AIガバナンス・気候変動をめぐって考えたことのログ。</p></div>\n\n'
-            + nav_html()
+    body = (nav_html()
             + '\n\n  <main class="post-list">\n'
             + "\n\n".join(cards) + "\n" + empty + "\n  </main>\n" + FILTER_JS)
     (ROOT / "index.html").write_text(
