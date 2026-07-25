@@ -140,7 +140,28 @@ def parse_post(path):
     )
     meta.setdefault("excerpt", "")
     meta.setdefault("thumbnail", "")
+    meta["thumbnail"] = normalize_thumb(meta["thumbnail"])
     return meta
+
+
+def normalize_thumb(thumb):
+    """サムネイル指定を寛容に解決する。
+    - `images/` の付け忘れを自動補完（例: foo.jpg → images/foo.jpg）
+    - 拡張子違いを自動修正（例: images/foo.jpg が無く images/foo.jpeg があれば置換）
+    外部URL（http/https）はそのまま。
+    """
+    thumb = (thumb or "").strip()
+    if not thumb or thumb.startswith(("http://", "https://", "/")):
+        return thumb
+    if not thumb.startswith("images/"):
+        thumb = "images/" + thumb.lstrip("./")
+    p = ROOT / thumb
+    if not p.exists():
+        for ext in (".jpg", ".jpeg", ".png", ".webp", ".gif"):
+            alt = p.with_suffix(ext)
+            if alt.exists():
+                return "images/" + alt.name
+    return thumb
 
 
 def date_ja(iso):
