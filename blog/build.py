@@ -50,11 +50,16 @@ def head(title):
 
 def header_html():
     return """  <header class="blog-header">
-    <button class="theme-toggle" type="button" aria-label="ダークモード切り替え">
-      <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-    </button>
-    <a href="../index.html" class="blog-logo">Yutaro's Blog</a>
+    <div class="blog-header__inner">
+      <div class="blog-header__top">
+        <a href="../index.html" class="blog-home">← 上野裕太郎</a>
+        <button class="theme-toggle" type="button" aria-label="テーマ切り替え（ライト / ダーク）">
+          <span class="tt-opt tt-l">L</span>
+          <span class="tt-opt tt-d">D</span>
+        </button>
+      </div>
+      <a href="index.html" class="blog-logo">Yutaro's Blog</a>
+    </div>
   </header>"""
 
 
@@ -86,8 +91,10 @@ THEME_JS = """  <script>
   document.addEventListener("click", function (e) {
     var b = e.target.closest(".theme-toggle");
     if (!b) return;
-    var cur = document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
-    var next = cur === "dark" ? "light" : "dark";
+    var next;
+    if (e.target.closest(".tt-d")) next = "dark";
+    else if (e.target.closest(".tt-l")) next = "light";
+    else next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
     document.documentElement.setAttribute("data-theme", next);
     try { localStorage.setItem("theme", next); } catch (err) {}
   });
