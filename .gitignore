@@ -11,3 +11,4 @@ __pycache__/
 /about.html
 /bio.html
 /research.html
+/blog/*/index.html

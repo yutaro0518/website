@@ -38,6 +38,7 @@ def head(title):
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <base href="/blog/" />
   <title>{html.escape(title)}</title>
   <script>(function(){{try{{var t=localStorage.getItem('theme');if(!t){{t=window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';}}document.documentElement.setAttribute('data-theme',t);}}catch(e){{}}}})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -52,13 +53,13 @@ def header_html():
     return """  <header class="blog-header">
     <div class="blog-header__inner">
       <div class="blog-header__top">
-        <a href="../index.html" class="blog-home">← 上野裕太郎</a>
+        <a href="../" class="blog-home">← 上野裕太郎</a>
         <button class="theme-toggle" type="button" aria-label="テーマ切り替え（ライト / ダーク）">
           <span class="tt-opt tt-l">L</span>
           <span class="tt-opt tt-d">D</span>
         </button>
       </div>
-      <a href="index.html" class="blog-logo">Yutaro's Blog</a>
+      <a href="./" class="blog-logo">Yutaro's Blog</a>
     </div>
   </header>"""
 
@@ -176,23 +177,26 @@ def render_article(p):
         thumb = (f'    <div class="article__hero">'
                  f'<img src="{html.escape(p["thumbnail"])}" alt="" /></div>\n')
     body = f"""  <article class="article">
-    <a href="index.html" class="article__back">← ブログ一覧へ戻る</a>
+    <a href="./" class="article__back">← ブログ一覧へ戻る</a>
     <h1 class="article__title">{html.escape(p["title"])}</h1>
     <div class="article__meta">{html.escape(p["category"])} ・ {date_ja(p["date"])}</div>
 {thumb}    <div class="article__body">
 {p["body_html"]}
     </div>
   </article>"""
-    out = ROOT / f'{p["slug"]}.html'
+    # クリーンURL: blog/<slug>/ で公開（/blog/<slug>/ = <slug>/index.html）
+    out_dir = ROOT / p["slug"]
+    out_dir.mkdir(exist_ok=True)
+    out = out_dir / "index.html"
     out.write_text(page(f'{p["title"]} | 上野裕太郎 Blog', body), encoding="utf-8")
-    return out.name
+    return f'{p["slug"]}/'
 
 # ---- 一覧ページ生成 ---------------------------------------------------------
 
 def render_index(posts):
     cards = []
     for p in posts:
-        link = f'{p["slug"]}.html'
+        link = f'{p["slug"]}/'
         thumb = ""
         if p["thumbnail"]:
             thumb = (f'      <a href="{link}" class="post__thumb">'
