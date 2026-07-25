@@ -34,13 +34,13 @@ desc: 上野裕太郎（Yutaro UENO）の研究テーマ・研究関心・論文
 
 以下は、修士論文をもとに NotebookLM が作成したスライド。
 
-- [The Japanese TV Climate Paradox（スライド）](https://drive.google.com)
+- [The Japanese TV Climate Paradox（スライド）](https://drive.google.com/file/d/1hBT3sezjQ9PStb0dgX7PSlpTIKPx3EvR/view)
 
 ## 学士論文｜Bachelor's Thesis
 
 以下は、学士論文をもとに NotebookLM が作成したスライド。
 
-- [Protest as a Social System（スライド）](https://drive.google.com)
+- [Protest as a Social System（スライド）](https://drive.google.com/file/d/1P-IW167LZWhyJrGhQDMNP6FcasIy0iay/view)
 
 ## 活動｜Activities
 
