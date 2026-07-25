@@ -1,28 +1,32 @@
 # 上野裕太郎 Blog
 
-Markdownで記事を書き、`build.py` を実行するとHTMLが生成される静的ブログです。
+Markdownで記事を書くだけの静的ブログです。**HTMLは書きません。**
+`.md` を main に入れると、GitHub Actions が `build.py` を実行してHTMLを自動生成・公開します。
 （PMI ThinkTank のブログと同じ仕組み）
+
+> **md-only 運用**：生成される `blog/*.html` は `.gitignore` 済みで、リポジトリには入りません。
+> **ソースは `blog/posts/*.md` だけ**。ローカルで `python3 build.py` を実行するのは、公開前に見た目を確認したいとき（任意）です。
 
 ## 構成
 
 ```
-yutaro0518/                    ← サイトのルート
+website/                       ← サイトのルート
 ├─ index.html ほか *.html      ← 個人サイト本体（About / Bio / Research / Activities）
 ├─ requirements.txt
-├─ .github/workflows/deploy.yml← push で自動ビルド＆公開（GitHub Actions）
+├─ .github/workflows/deploy.yml← main への push で自動ビルド＆公開（GitHub Actions）
 └─ blog/                       ← ブログ（/blog/ で公開）
-   ├─ posts/                   ← 記事の本体（.md）。ここだけ触ればOK
+   ├─ posts/                   ← 記事の本体（.md）。★ここだけ触ればOK★
    ├─ images/                  ← サムネイル・図版
-   ├─ build.py                 ← 実行するとブログを生成
+   ├─ build.py                 ← ブログ生成スクリプト（CIが実行。手動実行は任意）
    ├─ style.css                ← ブログのデザイン
-   ├─ index.html               ← 一覧（自動生成）
-   └─ *.html                   ← 各記事ページ（自動生成）
+   └─ *.html                   ← 一覧・各記事（自動生成・Git管理外）
 ```
 
-## 記事を追加する手順
+## 記事を追加する手順（python 実行なし）
 
-1. `posts/` に Markdown ファイルを1枚作る（例: `2026-08-01-my-post.md`）
-2. 先頭に frontmatter を書く：
+1. ブランチを切る
+2. `posts/` に Markdown ファイルを1枚作る（例: `2026-08-01-my-post.md`）。画像を使うなら `images/` にも置く
+3. 先頭に frontmatter を書く：
 
    ```markdown
    ---
@@ -41,14 +45,17 @@ yutaro0518/                    ← サイトのルート
    - **強調** や [リンク](https://example.com) も使える
    ```
 
-3. ビルドを実行：
+4. PR を作成して **main に merge**
 
-   ```bash
-   python3 build.py
-   ```
+これだけで、GitHub Actions が記事ページと一覧（**日付の新しい順**）を生成し、
+1分ほどで `yutaro0518.com/blog/` に公開されます。
 
-これで記事ページが作られ、`index.html` の一覧に **日付の新しい順** で並びます。
-あとは `git push` すると GitHub Actions が自動でビルド＆公開します。
+### ローカルで先に確認したいとき（任意）
+
+```bash
+pip install -r ../requirements.txt   # 初回のみ
+python3 build.py                     # blog/*.html が生成される（コミット不要）
+```
 
 ## カテゴリを変えたいとき
 
@@ -56,5 +63,4 @@ yutaro0518/                    ← サイトのルート
 
 ## 記事を消したいとき
 
-`posts/` から該当の `.md` を削除して `build.py` を再実行。
-（生成済みの `*.html` が残る場合は手動で削除）
+`posts/` から該当の `.md` を削除して merge するだけ（HTMLは自動で作り直されます）。

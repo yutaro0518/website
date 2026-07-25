@@ -3,3 +3,6 @@
 node_modules/
 __pycache__/
 *.pyc
+
+# 自動生成されるブログHTML（ソースは blog/posts/*.md。CI が build.py でビルドします）
+/blog/*.html
