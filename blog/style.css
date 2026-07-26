@@ -188,14 +188,9 @@ img { max-width: 100%; height: auto; }
   border-top: 1px solid var(--line);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 16px;
   padding: 20px var(--pad);
-}
-.blog-footer__left {
-  font-family: var(--font-en);
-  font-size: 13px;
-  color: var(--ink-faint);
 }
 .blog-footer__social { display: flex; align-items: center; gap: 16px; }
 .blog-footer__social a {

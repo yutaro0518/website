@@ -29,6 +29,8 @@ LINKEDIN_SVG = ('<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20
                 ' 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9'
                 'h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24'
                 'h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>')
+SUBSTACK_SVG = ('<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22.539 8.242H1.46V5.406h21.08'
+                'v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg>')
 
 
 def asset_v(name):
@@ -120,10 +122,10 @@ def render(slug, meta, body, css_v, js_v):
   </main>
 
   <footer class="site-footer">
-    <p class="hf-left">Tokyo, Japan　<span>© <span class="year"></span> Yutaro UENO</span></p>
     <div class="hf-social">
       <a href="https://x.com/yutaro_0518" target="_blank" rel="noopener" aria-label="X (Twitter)">{X_SVG}</a>
       <a href="https://www.linkedin.com/in/yutaro0518/" target="_blank" rel="noopener" aria-label="LinkedIn">{LINKEDIN_SVG}</a>
+      <a href="https://yutaro0518.substack.com" target="_blank" rel="noopener" aria-label="Substack">{SUBSTACK_SVG}</a>
     </div>
   </footer>
 

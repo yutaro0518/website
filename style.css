@@ -224,7 +224,7 @@ strong { color: var(--accent); font-weight: 600; }
   left: 0; right: 0; bottom: 0;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 16px;
   padding: 22px var(--pad);
 }
@@ -421,7 +421,7 @@ strong { color: var(--accent); font-weight: 600; }
   border-top: 1px solid var(--line);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 16px;
   padding: 20px var(--pad);
 }
