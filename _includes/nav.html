@@ -1,0 +1,18 @@
+      <nav class="nav-links">
+        <div class="nav-item has-dropdown">
+          <a href="{{ '/about/' | relative_url }}"{% if page.nav == 'about' %} class="active"{% endif %}>About me <span class="caret" aria-hidden="true">▾</span></a>
+          <div class="dropdown"><div class="dropdown-inner">
+            <a href="{{ '/about/' | relative_url }}"{% if page.section == 'about' %} class="active"{% endif %}>About</a>
+            <a href="{{ '/bio/' | relative_url }}"{% if page.section == 'bio' %} class="active"{% endif %}>Bio</a>
+            <a href="{{ '/research/' | relative_url }}"{% if page.section == 'research' %} class="active"{% endif %}>Research</a>
+          </div></div>
+        </div>
+        <a href="{{ '/blog/' | relative_url }}?cat=Essay">Thought</a>
+        <div class="nav-item has-dropdown">
+          <a href="{{ '/activities/' | relative_url }}"{% if page.nav == 'activities' %} class="active"{% endif %}>Activities <span class="caret" aria-hidden="true">▾</span></a>
+          <div class="dropdown"><div class="dropdown-inner">
+            <a href="https://humanresearchcollective.substack.com/" target="_blank" rel="noopener">Human Research Collective<span class="ext">↗</span></a>
+          </div></div>
+        </div>
+        <a href="{{ '/blog/' | relative_url }}">Blog</a>
+      </nav>

@@ -1,0 +1,12 @@
+---
+layout: blog
+---
+  <article class="article">
+    <a href="{{ '/blog/' | relative_url }}" class="article__back">← ブログ一覧へ戻る</a>
+    <h1 class="article__title">{{ page.title }}</h1>
+    <div class="article__meta">{{ page.category | default: site.default_category }} ・ {{ page.date | date: "%Y年%-m月%-d日" }}</div>
+{% if page.thumbnail %}    <div class="article__hero"><img src="{{ '/blog/' | append: page.thumbnail | relative_url }}" alt="" /></div>
+{% endif %}    <div class="article__body">
+{{ content }}
+    </div>
+  </article>

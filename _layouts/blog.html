@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+{% include head.html %}
+</head>
+<body>
+
+  <header class="blog-header">
+    <div class="blog-header__inner">
+      <div class="blog-header__top">
+        <a href="{{ '/' | relative_url }}" class="blog-home">← 上野裕太郎</a>
+        <button class="theme-toggle" type="button" aria-label="テーマ切り替え（ライト / ダーク）">
+          <span class="tt-opt tt-l">L</span>
+          <span class="tt-opt tt-d">D</span>
+        </button>
+      </div>
+      <a href="{{ '/blog/' | relative_url }}" class="blog-logo">Yutaro's Blog</a>
+    </div>
+  </header>
+
+{{ content }}
+
+  <footer class="blog-footer">
+    <div class="blog-footer__social">
+      {% include social.html %}
+    </div>
+  </footer>
+
+{% include scripts.html %}
+</body>
+</html>

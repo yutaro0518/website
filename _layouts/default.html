@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+{% include head.html %}
+</head>
+<body>
+
+  <header class="site-header{% unless page.landing %} scrolled{% endunless %}" id="top">
+    <div class="nav-inner">
+      <a href="{{ '/' | relative_url }}" class="brand">
+        <span class="brand-jp">上野裕太郎</span>
+        <span class="brand-en">Yutaro&nbsp;UENO</span>
+      </a>
+      <button class="nav-toggle" aria-label="メニュー" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <button class="theme-toggle" type="button" aria-label="テーマ切り替え（ライト / ダーク）">
+        <span class="tt-opt tt-l">L</span>
+        <span class="tt-opt tt-d">D</span>
+      </button>
+{% include nav.html %}
+    </div>
+  </header>
+
+{{ content }}
+
+{% include scripts.html %}
+</body>
+</html>

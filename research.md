@@ -1,5 +1,9 @@
 ---
+layout: page
 title: Research
+nav: about
+section: research
+permalink: /research/
 desc: 上野裕太郎（Yutaro UENO）の研究テーマ・研究関心・論文・活動・報告。理論社会学／社会システム理論を軸に、気候変動・AI・社会運動を横断する。
 ---
 

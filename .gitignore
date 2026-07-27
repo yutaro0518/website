@@ -4,11 +4,7 @@ node_modules/
 __pycache__/
 *.pyc
 
-# 自動生成されるブログHTML（ソースは blog/posts/*.md。CI が build.py でビルドします）
-/blog/*.html
-
-# 自動生成されるメインページ（ソースは content/*.md）
-/about/index.html
-/bio/index.html
-/research/index.html
-/blog/*/index.html
+# Jekyll build output（GitHub Pages がビルドするのでコミット不要）
+_site/
+.jekyll-cache/
+.jekyll-metadata

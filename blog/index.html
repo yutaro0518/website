@@ -1,0 +1,59 @@
+---
+layout: blog
+head_title: "上野裕太郎 Blog"
+permalink: /blog/
+---
+  <nav class="category-nav">
+    <a href="#" class="is-active" data-cat="all">All</a>
+{% for c in site.categories_list %}    <a href="#" data-cat="{{ c }}">{{ c }}</a>
+{% endfor %}  </nav>
+
+  <main class="post-list">
+{% assign posts = site.pages | where_exp: "p", "p.date" | sort: "date" | reverse %}
+{% for p in posts %}{% assign cat = p.category | default: site.default_category %}{% assign link = p.url | remove: '.html' | relative_url %}    <article class="post" data-category="{{ cat }}">
+      <a href="{{ link }}"><h2 class="post__title">{{ p.title }}</h2></a>
+      <div class="post__meta">
+        <span class="post__cat">{{ cat }}</span>
+        <span>{{ p.date | date: "%Y年%-m月%-d日" }}</span>
+      </div>
+{% if p.thumbnail %}      <a href="{{ link }}" class="post__thumb"><img src="{{ '/blog/' | append: p.thumbnail | relative_url }}" alt="" /></a>
+{% endif %}{% if p.excerpt %}      <p class="post__excerpt">{{ p.excerpt }}</p>
+{% endif %}      <a href="{{ link }}" class="post__more">read more</a>
+    </article>
+{% endfor %}    <p class="post-empty" hidden>このカテゴリの記事はまだありません。</p>
+  </main>
+
+  <script>
+  (function () {
+    var nav = document.querySelector(".category-nav");
+    var posts = Array.prototype.slice.call(document.querySelectorAll(".post"));
+    var empty = document.querySelector(".post-empty");
+    if (!nav) return;
+
+    function apply(cat) {
+      var shown = 0;
+      posts.forEach(function (el) {
+        var match = cat === "all" || el.getAttribute("data-category") === cat;
+        el.hidden = !match;
+        if (match) shown++;
+      });
+      if (empty) empty.hidden = shown !== 0;
+    }
+    function activate(a) {
+      nav.querySelectorAll("a").forEach(function (x) { x.classList.remove("is-active"); });
+      a.classList.add("is-active");
+      apply(a.getAttribute("data-cat"));
+    }
+    nav.addEventListener("click", function (e) {
+      var a = e.target.closest("a[data-cat]");
+      if (!a) return;
+      e.preventDefault();
+      activate(a);
+    });
+    var want = new URLSearchParams(location.search).get("cat");
+    if (want) {
+      var target = nav.querySelector('a[data-cat="' + want.replace(/[^\w-]/g, "") + '"]');
+      if (target) activate(target);
+    }
+  })();
+  </script>

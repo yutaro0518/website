@@ -1,0 +1,33 @@
+title: "上野裕太郎｜Yutaro UENO"
+description: "上野裕太郎（Yutaro UENO）— 理論社会学／AIガバナンス。AIガバナンス協会 事務局次長、PMI ThinkTank リサーチャー、ZINE「Human?」主宰。"
+
+# 独自ドメイン（yutaro0518.com）のルート公開なので baseurl は空
+baseurl: ""
+
+markdown: kramdown
+
+# アセットのキャッシュ更新用（style.css?v= に使う）。CSSを変えたら数字を上げる
+asset_version: 5
+
+# ブログのカテゴリ（表示順）。記事 frontmatter の category: で指定
+categories_list:
+  - "Essay"
+  - "Book"
+  - "Log"
+default_category: "Log"
+
+# blog/ 直下の記事(.md)は自動的に post レイアウトを使う
+defaults:
+  - scope:
+      path: "blog"
+      type: "pages"
+    values:
+      layout: "post"
+
+# Jekyll の出力に含めないもの
+exclude:
+  - README.md
+  - requirements.txt
+  - Gemfile
+  - Gemfile.lock
+  - vendor
