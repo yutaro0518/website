@@ -13,12 +13,9 @@ permalink: /blog/
 {% for p in posts %}{% assign cat = p.category | default: site.default_category %}{% assign link = p.url | remove: '.html' | relative_url %}    <article class="post" data-category="{{ cat }}">
       <a href="{{ link }}"><h2 class="post__title">{{ p.title }}</h2></a>
       <div class="post__meta">
+        <span class="post__date">{{ p.date | date: "%Y年%-m月%-d日" }}</span>
         <span class="post__cat">{{ cat }}</span>
-        <span>{{ p.date | date: "%Y年%-m月%-d日" }}</span>
       </div>
-{% if p.thumbnail %}      <a href="{{ link }}" class="post__thumb"><img src="{{ '/blog/' | append: p.thumbnail | relative_url }}" alt="" /></a>
-{% endif %}{% if p.excerpt %}      <p class="post__excerpt">{{ p.excerpt }}</p>
-{% endif %}      <a href="{{ link }}" class="post__more">read more</a>
     </article>
 {% endfor %}    <p class="post-empty" hidden>このカテゴリの記事はまだありません。</p>
   </main>
