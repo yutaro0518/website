@@ -1,7 +1,7 @@
 ---
 title: "倫理的野心とオルタナティブ"
 date: 2026-04-25
-category: "Essay"
+categories: [Essay, Moral Ambitions]
 excerpt: "院生時代、気候変動への対策を求める若者の社会運動に参加していた。理由は、1)気候変動の問題に関心があったこと、2)修士の研究テーマにしたかったことの2つだった。"
 thumbnail: images/moralanbitionsandalternative.jpeg
 ---
