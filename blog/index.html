@@ -10,12 +10,12 @@ permalink: /blog/
 
   <main class="post-list">
 {% assign posts = site.pages | where_exp: "p", "p.date" | sort: "date" | reverse %}
-{% for p in posts %}{% assign cat = p.category | default: site.default_category %}{% assign link = p.url | remove: '.html' | relative_url %}    <article class="post" data-category="{{ cat }}">
+{% for p in posts %}{% if p.categories %}{% assign cats = p.categories %}{% else %}{% assign cats = p.category | default: site.default_category | split: "###" %}{% endif %}{% assign link = p.url | remove: '.html' | relative_url %}    <article class="post" data-categories="{{ cats | join: '|' }}">
       <a href="{{ link }}"><h2 class="post__title">{{ p.title }}</h2></a>
       <div class="post__meta">
         <span class="post__date">{{ p.date | date: "%Y年%-m月%-d日" }}</span>
-        <span class="post__cat">{{ cat }}</span>
-      </div>
+{% for c in cats %}        <span class="post__cat">{{ c }}</span>
+{% endfor %}      </div>
     </article>
 {% endfor %}    <p class="post-empty" hidden>このカテゴリの記事はまだありません。</p>
   </main>
@@ -30,7 +30,8 @@ permalink: /blog/
     function apply(cat) {
       var shown = 0;
       posts.forEach(function (el) {
-        var match = cat === "all" || el.getAttribute("data-category") === cat;
+        var list = (el.getAttribute("data-categories") || "").split("|");
+        var match = cat === "all" || list.indexOf(cat) !== -1;
         el.hidden = !match;
         if (match) shown++;
       });

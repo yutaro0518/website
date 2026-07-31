@@ -33,13 +33,20 @@
 ---
 title: "記事タイトル"
 date: 2026-08-01
-category: "Essay"          # Essay / Book / Log（未指定は Log）
+category: "Essay"          # 1つだけ付ける場合（Essay / Book / Log。未指定は Log）
+# categories: [Essay, Book]  # 複数付けたい場合はこちら（category の代わりに）
 excerpt: "一覧に出る要約。"
 thumbnail: images/xxx.jpeg  # blog/images/ に置いた画像（任意）
 ---
 
 本文を Markdown で。
 ```
+
+> **カテゴリを複数付けたいとき**は `category:` の代わりに `categories:` を使います。
+> ```yaml
+> categories: [Essay, Book]     # or 縦並びで categories:\n  - Essay\n  - Book
+> ```
+> 使うカテゴリ名は `_config.yml` の `categories_list` にも入れておくと、一覧の絞り込みボタンに出ます。
 
 > **ポイント**
 > - 見出しは `## 見出し` のように `#` の後に**半角スペース**（kramdown 仕様）
