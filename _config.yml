@@ -13,6 +13,7 @@ asset_version: 6
 categories_list:
   - "Essay"
   - "Book"
+  - "Moral Ambitions"
   - "Log"
 default_category: "Log"
 
