@@ -46,7 +46,7 @@ desc: 上野裕太郎（Yutaro UENO）の研究テーマ・研究関心・論文
 
 - [Protest as a Social System（スライド）](https://drive.google.com/file/d/1P-IW167LZWhyJrGhQDMNP6FcasIy0iay/view)
 
-## 活動｜Activities
+## 活動｜Projects
 
 ### AIガバナンス協会
 
