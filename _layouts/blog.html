@@ -5,7 +5,7 @@
 </head>
 <body>
 
-  <header class="blog-header">
+{% unless page.layout == "post" %}  <header class="blog-header">
     <div class="blog-header__inner">
       <div class="blog-header__top">
         <a href="{{ '/' | relative_url }}" class="blog-home">← 上野裕太郎</a>
@@ -17,6 +17,7 @@
       <a href="{{ '/blog/' | relative_url }}" class="blog-logo">Yutaro's Blog</a>
     </div>
   </header>
+{% endunless %}
 
 {{ content }}
 
