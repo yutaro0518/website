@@ -683,7 +683,22 @@ strong { color: var(--accent); font-weight: 600; }
   display: block;
   max-width: 100%;
   height: auto;
-  margin: 24px 0;
+  margin: 24px auto;            /* 中央揃え */
   border: 1px solid var(--line);
   border-radius: 8px;
+}
+/* 書影（本の表紙）: 中央・本らしい幅・影。Markdownで ![alt](img){: .cover} と書く */
+.article__body img.cover {
+  max-width: 240px;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 8px 26px var(--shadow);
+  margin: 30px auto 12px;
+}
+/* キャプション: 書影の下に *斜体1行* を置くと中央・小さめ・グレーで表示 */
+.article__body .caption {
+  text-align: center;
+  font-size: 13px;
+  color: var(--ink-faint);
+  margin: -4px 0 22px;
 }
