@@ -3,6 +3,7 @@ description: "上野裕太郎（Yutaro UENO）— 理論社会学／AIガバナ�
 
 # 独自ドメイン（yutaro0518.com）のルート公開なので baseurl は空
 baseurl: ""
+url: "https://yutaro0518.com"
 
 markdown: kramdown
 

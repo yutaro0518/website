@@ -2,6 +2,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{% if page.head_title %}{{ page.head_title }}{% elsif page.layout == "post" %}{{ page.title }}｜上野裕太郎{% elsif page.title %}{{ page.title }}｜上野裕太郎{% else %}{{ site.title }}{% endif %}</title>
   <meta name="description" content="{{ page.desc | default: site.description }}" />
+  <link rel="canonical" href="{{ page.url | absolute_url }}" />
+  {%- capture og_title -%}{% if page.head_title %}{{ page.head_title }}{% elsif page.title %}{{ page.title }}｜上野裕太郎{% else %}{{ site.title }}{% endif %}{%- endcapture -%}
+  {%- if page.layout == "post" and page.thumbnail -%}{%- assign og_image = '/blog/' | append: page.thumbnail | absolute_url -%}{%- else -%}{%- assign og_image = '/ogp.png' | absolute_url -%}{%- endif -%}
+  <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}" />
+  <meta property="og:title" content="{{ og_title }}" />
+  <meta property="og:description" content="{{ page.desc | default: site.description }}" />
+  <meta property="og:url" content="{{ page.url | absolute_url }}" />
+  <meta property="og:site_name" content="上野裕太郎｜Yutaro UENO" />
+  <meta property="og:locale" content="ja_JP" />
+  <meta property="og:image" content="{{ og_image }}" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{{ og_title }}" />
+  <meta name="twitter:description" content="{{ page.desc | default: site.description }}" />
+  <meta name="twitter:image" content="{{ og_image }}" />
   <script>(function(){try{var t=localStorage.getItem('theme');if(!t){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
