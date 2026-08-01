@@ -4,16 +4,12 @@
   <meta name="description" content="{{ page.desc | default: site.description }}" />
   <link rel="canonical" href="{{ page.url | absolute_url }}" />
   {%- if page.layout == "post" -%}
-    {%- assign slug = page.url | split: '/' | last | remove: '.html' -%}
-    {%- assign og_image = '/blog/og/' | append: slug | append: '.png' | absolute_url -%}
+    {%- if page.og_image -%}{%- assign og_image = '/blog/' | append: page.og_image | absolute_url -%}
+    {%- elsif page.thumbnail -%}{%- assign og_image = '/blog/' | append: page.thumbnail | absolute_url -%}
+    {%- else -%}{%- assign og_image = '/ogp.png' | absolute_url -%}{%- endif -%}
     {%- assign og_title = page.title -%}
     {%- assign og_site = "Yutaro's Blog" -%}
     {%- assign og_type = "article" -%}
-  {%- elsif page.url == "/blog/" -%}
-    {%- assign og_image = '/blog/og/list.png' | absolute_url -%}
-    {%- assign og_title = "Yutaro's Blog" -%}
-    {%- assign og_site = "Yutaro's Blog" -%}
-    {%- assign og_type = "website" -%}
   {%- else -%}
     {%- assign og_image = '/ogp.png' | absolute_url -%}
     {%- capture og_title -%}{% if page.head_title %}{{ page.head_title }}{% elsif page.title %}{{ page.title }}｜上野裕太郎{% else %}{{ site.title }}{% endif %}{%- endcapture -%}
@@ -27,8 +23,6 @@
   <meta property="og:site_name" content="{{ og_site }}" />
   <meta property="og:locale" content="ja_JP" />
   <meta property="og:image" content="{{ og_image }}" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="{{ og_title }}" />
   <meta name="twitter:description" content="{{ page.desc | default: site.description }}" />

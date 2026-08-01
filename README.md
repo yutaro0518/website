@@ -42,11 +42,10 @@ thumbnail: images/xxx.jpeg  # blog/images/ に置いた画像（任意）
 本文を Markdown で。
 ```
 
-> **OGP画像（SNSシェア用）**：記事のOGP画像は「Yutaro's Blog ＋ タイトル」を焼き込んだ画像を使います。
-> 記事を追加したら次を一度実行して、生成された `blog/og/*.png` もコミットしてください（任意・SNS見栄え用）。
-> ```bash
-> pip install Pillow        # 初回のみ
-> python3 tools/make_og.py  # 全記事ぶんを一括生成（macOSのヒラギノ使用）
+> **OGP画像（SNSシェア用）**：記事の front matter に `og_image:` を書くと、その画像がSNSカードに使われます。
+> 画像は自分で作って `blog/images/` に置き、パスを指定します（未指定なら `thumbnail`、それも無ければ共通の `ogp.png`）。
+> ```yaml
+> og_image: images/xxx-og.png   # blog/images/ に置いた画像
 > ```
 
 > **カテゴリを複数付けたいとき**は `category:` の代わりに `categories:` を使います。
