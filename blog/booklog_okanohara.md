@@ -1,5 +1,5 @@
 ---  
-title: "Boolklog: 岡野原大輔『ヒトとAI』"  
+title: "Booklog: 岡野原大輔『ヒトとAI』"  
 date: 2026-08-01  
 category: "Book"  
 ---
