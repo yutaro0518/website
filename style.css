@@ -14,8 +14,8 @@
   --max: 1120px;
   --pad: clamp(20px, 5vw, 64px);
   --radius: 14px;
-  --font-jp: "Noto Sans JP", "Inter", system-ui, sans-serif;
-  --font-en: "Inter", "Noto Sans JP", system-ui, sans-serif;
+  --font-jp: "Manrope", "Noto Sans JP", system-ui, sans-serif;
+  --font-en: "Manrope", "Noto Sans JP", system-ui, sans-serif;
   color-scheme: light;
 }
 
