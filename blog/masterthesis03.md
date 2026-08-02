@@ -2,6 +2,7 @@
 title: "第3回 「気候変動の影響で」という8文字から始める"  
 date: 2026-08-03  
 category: "Essay"
+excerpt: "修士論文を元にしたBlogシリーズ第3弾"
 OG_image: images/masterthesis03.png
 ---
 ## **正論では現場は動かない**
