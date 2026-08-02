@@ -7,7 +7,7 @@ og_image: images/readingmemo202607/readingmemo202607.png
 ## 夏帆
 著：村上春樹／出版：新潮社
 
-![書影1](images/readingmemo202607/readingmemo-2607-1.jpg) {: .cover}
+![書影1](images/readingmemo202607/readingmemo-2607-1.jpg){: .cover}
 
 待ってました。村上春樹の最新作。発売当日にオフィスのあるビルに入っている書店で購入。1日机の上に飾ってその週末と翌週末に分けてじっくり楽しんだ。
 
@@ -22,7 +22,7 @@ og_image: images/readingmemo202607/readingmemo202607.png
 ## AIに恋しちゃダメですか？
 著：清水颯／出版：技術評論社
 
-![書影2](images/readingmemo202607/readingmemo-2607-2.jpg) {: .cover}
+![書影2](images/readingmemo202607/readingmemo-2607-2.jpg){: .cover}
 
 タイトルで油断させておいて、中身の重厚さでやられる。そんな1冊。若手の気鋭研究者の清水さんが書く、哲学入門書であり、AI倫理の入門書と言ってもいいかもしれない。それだけ本の中で展開される議論はアカデミックなものだ。まず、タイトルと表紙で躊躇している人がまだいるなら、今これを読んだ瞬間に買って欲しい。
 
@@ -35,7 +35,7 @@ og_image: images/readingmemo202607/readingmemo202607.png
 ## 新・消費論
 著：林凌／出版：中央公論新社
 
-![書影3](images/readingmemo202607/readingmemo-2607-3.jpg) {: .cover}
+![書影3](images/readingmemo202607/readingmemo-2607-3.jpg){: .cover}
 
 消費者研究で知られる林先生の新刊。前回は骨太な研究書であったが、今回は比較的読みやすい新書で発売。しかし、その内容は決して軽くはない（だからこそ面白いのだが）。
 
@@ -48,7 +48,7 @@ og_image: images/readingmemo202607/readingmemo202607.png
 ## テック業界で仕事する人のための倫理学
 著：マーク・スティーン／出版：名古屋大学出版会
 
-![書影4](images/readingmemo202607/readingmemo-2607-4.jpg) {: .cover}
+![書影4](images/readingmemo202607/readingmemo-2607-4.jpg){: .cover}
 
 名古屋大学出版会の本は大体どれも面白そうだけど、大体がそれなりの値段をするためなかなか手が出せない。しかし、この本は名古屋大学出版会の中では安い部類だ（それでも安くはないが）。そんな、タイトルから既に刺激的な1冊が、この『テック業界で仕事する人のための倫理学』だ。
 
@@ -59,7 +59,7 @@ og_image: images/readingmemo202607/readingmemo202607.png
 ## ヒトとAI
 著：岡野原大輔／出版：岩波書店
 
-![書影5](images/readingmemo202607/readingmemo-2607-5.jpg) {: .cover}
+![書影5](images/readingmemo202607/readingmemo-2607-5.jpg){: .cover}
 
 日本を代表するAI企業の1つ、Preferred Networksの共同創業者で社長の岡野原大輔さんによる「人間-AI論」。
 
