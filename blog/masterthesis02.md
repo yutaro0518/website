@@ -3,6 +3,7 @@ title: "【Notes from the Thesis】第2回 パンダとグルメに負ける気�
 date: 2026-07-31 
 category: "Essay"
 excerpt: "修士論文を元にしたBlogシリーズ第2弾"
+OG_images: images/masterthesis02.png
 ---
 ## **ニュースは「選ばれて」いる**
 [前回](https://yutaro0518.com/blog/masterthesis01)は、日本のテレビが猛暑や豪雨という現象を大量に報じながら、その原因である気候変動にはほとんど言及していないことをデータで確認した。今回は、なぜそうなるのかを、テレビ局で働く送り手たちへのインタビューをもとに考えたい。
