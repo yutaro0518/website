@@ -1,7 +1,7 @@
 ---  
-title: "【Notes from the Thesis】第3回 「気候変動の影響で」という8文字から始める"  
+title: "Notes from the Thesis: 第3回 「気候変動の影響で」という8文字から始める"
 date: 2026-08-03  
-category: "Essay"
+category: Essay
 excerpt: "修士論文を元にしたBlogシリーズ第3弾"
 og_image: images/masterthesis03.png
 ---
