@@ -3,7 +3,6 @@ title: "「防衛テックの倫理」をめぐる倫理"
 date: 2026-07-05
 category: "Essay"
 excerpt: "先日、De-Siloが開催した「〈防衛テック〉の倫理」というイベントに参加してきた。"
-thumbnail: images/deftechandethics.jpg
 ---
 先日、De-Siloが開催した「[〈防衛テック〉の倫理](https://open.substack.com/pub/desilo/p/academic-insights-26?r=1mxhp2&utm_campaign=post-expanded-share&utm_medium=post%20viewer)」というイベントに参加してきた。話された内容の大枠は、同じくDe-Siloが制作しているPodacst「2020s」の「[〈防衛テック〉の倫理とナラティブ](https://open.substack.com/pub/desilo/p/2020s-ep6?r=1mxhp2&utm_campaign=post-expanded-share&utm_medium=post%20viewer)」回で紹介されている内容から始まり、登壇者それぞれの専門から防衛テックについて語られていくという形で進行した。
 
