@@ -1,7 +1,7 @@
 ---  
-title: "【Notes from the Thesis】第2回 パンダとグルメに負ける気候変動。ニュースルームの内側で何が起きているのか"  
+title: "Notes from the Thesis: 第2回 パンダとグルメに負ける気候変動。ニュースルームの内側で何が起きているのか"  
 date: 2026-07-31 
-category: "Essay"
+category: Essay
 excerpt: "修士論文を元にしたBlogシリーズ第2弾"
 OG_images: images/masterthesis02.png
 ---
