@@ -1,6 +1,6 @@
 ---  
 title: "Readingmemo: Jul. 2026"  
-date: 2026-08-01
+date: 2026-08-02
 category: "Book"
 og_image: images/readingmemo202607/readingmemo202607.png 
 ---
