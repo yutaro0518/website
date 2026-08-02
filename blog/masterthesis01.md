@@ -1,5 +1,5 @@
 ---  
-title: "【Notes from the Thesis】第1回 テレビは猛暑を報じるが、気候変動は報じない"  
+title: "Notes from the Thesis: 第1回 テレビは猛暑を報じるが、気候変動は報じない"  
 date: 2026-07-27
 category: "Essay"  
 excerpt: "修士論文を元にしたBlogシリーズ第1弾"
