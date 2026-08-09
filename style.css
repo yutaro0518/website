@@ -305,9 +305,25 @@ strong { color: var(--accent); font-weight: 600; }
   transition: border-color .2s;
 }
 .home-about__more:hover { border-color: var(--ink); }
+.home-about__hint {
+  margin-top: 30px;
+  font-family: var(--font-en);
+  font-size: .68rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  opacity: .75;
+}
+
+/* ページ遷移をクロスフェード（対応ブラウザのみ／非対応は通常遷移） */
+@view-transition { navigation: auto; }
+::view-transition-old(root),
+::view-transition-new(root) { animation-duration: .22s; }
 
 @media (prefers-reduced-motion: reduce) {
   .hero-scroll__arrow { animation: none; }
+  ::view-transition-old(root),
+  ::view-transition-new(root) { animation: none; }
 }
 @media (max-width: 860px) {
   /* SNSアイコン（右下）とスクロール誘導が近づきすぎないように */

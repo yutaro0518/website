@@ -30,6 +30,70 @@
     window.addEventListener('scroll', onScroll, { passive: true });
   })();
 
+  // Home only: About セクションの最下部でさらにスクロールしたら /about/ へ送る
+  (function () {
+    var more = document.querySelector('.home-about__more');
+    if (!more) return; // トップページ以外では動かない
+    var href = more.getAttribute('href');
+    if (!href) return;
+
+    var THRESHOLD = 180; // これだけ「さらに」スクロールされたら遷移
+    var SETTLE_MS = 350; // 最下部到達後の慣性スクロールを無視する時間
+
+    var acc = 0;
+    var armed = false;     // 一度でも最下部から離れるまで発火させない（戻る操作対策）
+    var bottomSince = 0;
+    var navigating = false;
+
+    function atBottom() {
+      return (window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 2);
+    }
+    function menuOpen() {
+      var l = document.querySelector('.nav-links');
+      return !!(l && l.classList.contains('open'));
+    }
+    function ready() {
+      return armed && !navigating && !menuOpen() &&
+             bottomSince && (Date.now() - bottomSince) > SETTLE_MS;
+    }
+    function onScroll() {
+      if (atBottom()) {
+        if (!bottomSince) bottomSince = Date.now();
+      } else {
+        bottomSince = 0; acc = 0; armed = true;
+      }
+    }
+    function advance(delta) {
+      if (delta < 0) { acc = 0; return; }
+      if (!atBottom() || !ready()) return;
+      acc += delta;
+      if (acc >= THRESHOLD) { navigating = true; window.location.href = href; }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('wheel', function (e) { advance(e.deltaY); }, { passive: true });
+
+    var touchY = null;
+    window.addEventListener('touchstart', function (e) { touchY = e.touches[0].clientY; }, { passive: true });
+    window.addEventListener('touchmove', function (e) {
+      if (touchY === null) return;
+      var y = e.touches[0].clientY;
+      advance(touchY - y); // 上へスワイプ（＝下スクロール）で正
+      touchY = y;
+    }, { passive: true });
+    window.addEventListener('touchend', function () { touchY = null; }, { passive: true });
+
+    // 戻る操作（bfcache 復帰）で最下部に戻された場合は解除しておく
+    window.addEventListener('pageshow', function () {
+      navigating = false; acc = 0; bottomSince = 0;
+      armed = !atBottom();
+      onScroll();
+    });
+
+    armed = !atBottom();
+    onScroll();
+  })();
+
   // Dark / light theme toggle (L / D pill). Initial theme set by inline <head> script.
   document.addEventListener('click', function (e) {
     var b = e.target.closest('.theme-toggle');
