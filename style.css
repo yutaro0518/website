@@ -278,16 +278,16 @@ strong { color: var(--accent); font-weight: 600; }
 }
 .post-feed__ttl {
   display: block;
-  font-size: clamp(1.06rem, 1.7vw, 1.22rem);
+  font-size: clamp(.98rem, 1.35vw, 1.1rem);
   font-weight: 700;
-  line-height: 1.5;
+  line-height: 1.55;
   color: var(--ink);
 }
 .post-feed__ex {
   display: block;
   max-width: 42em;
-  margin-top: 12px;
-  font-size: .95rem;
+  margin-top: 11px;
+  font-size: .88rem;
   line-height: 1.85;
   color: var(--ink-soft);
 }
