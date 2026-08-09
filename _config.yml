@@ -13,7 +13,7 @@ plugins:
   - jekyll-redirect-from   # 統合で消えた /bio/ を /about/ へ301転送（SEO維持）
 
 # アセットのキャッシュ更新用（style.css?v= に使う）。CSSを変えたら数字を上げる
-asset_version: 13
+asset_version: 14
 
 # トップの顔写真（任意）。画像を置いてパスを書くと表示される。未設定なら文章のみ
 # portrait: /images/portrait.jpg

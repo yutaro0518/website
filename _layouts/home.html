@@ -12,16 +12,21 @@ layout: default
 
     <section class="home-posts">
       <h2 class="home-posts__label">Latest</h2>
-      <ul class="post-feed">
+      <div class="home-posts__body">
+        <ul class="post-feed">
 {% assign recent = site.pages | where_exp: "p", "p.date" | sort: "date" | reverse %}
-{% for p in recent limit: 8 %}{% assign link = p.url | remove: '.html' | relative_url %}        <li class="post-feed__item">
-          <a href="{{ link }}">
-            <span class="post-feed__date">{{ p.date | date: "%Y.%m.%d" }}</span>
-            <span class="post-feed__ttl">{{ p.title }}</span>
-          </a>
-        </li>
-{% endfor %}      </ul>
-      <a class="home-posts__more" href="{{ '/blog/' | relative_url }}">すべての記事<span aria-hidden="true"> →</span></a>
+{% for p in recent limit: 5 %}{% assign link = p.url | remove: '.html' | relative_url %}{% if p.excerpt %}{% assign ex = p.excerpt %}{% else %}{% assign ex = p.content | markdownify | strip_html | normalize_whitespace | truncate: 110 %}{% endif %}          <li class="post-feed__item">
+            <a href="{{ link }}">
+              <span class="post-feed__date">{{ p.date | date: "%Y.%m.%d" }}</span>
+              <span class="post-feed__text">
+                <span class="post-feed__ttl">{{ p.title }}</span>
+                <span class="post-feed__ex">{{ ex }}</span>
+              </span>
+            </a>
+          </li>
+{% endfor %}        </ul>
+        <a class="home-posts__more" href="{{ '/blog/' | relative_url }}">すべての記事<span aria-hidden="true"> →</span></a>
+      </div>
     </section>
   </main>
 
