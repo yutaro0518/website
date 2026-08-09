@@ -1,7 +1,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{% if page.head_title %}{{ page.head_title }}{% elsif page.layout == "post" %}{{ page.title }}｜上野裕太郎{% elsif page.title %}{{ page.title }}｜上野裕太郎{% else %}{{ site.title }}{% endif %}</title>
-  <meta name="description" content="{{ page.desc | default: site.description }}" />
+  {%- assign page_desc = page.desc | default: page.excerpt | default: site.description | strip_html | strip_newlines | escape -%}
+  <meta name="description" content="{{ page_desc }}" />
   <link rel="canonical" href="{{ page.url | absolute_url }}" />
   {%- if page.layout == "post" -%}
     {%- if page.og_image -%}{%- assign og_image = '/blog/' | append: page.og_image | absolute_url -%}
@@ -18,14 +19,14 @@
   {%- endif -%}
   <meta property="og:type" content="{{ og_type }}" />
   <meta property="og:title" content="{{ og_title }}" />
-  <meta property="og:description" content="{{ page.desc | default: site.description }}" />
+  <meta property="og:description" content="{{ page_desc }}" />
   <meta property="og:url" content="{{ page.url | absolute_url }}" />
   <meta property="og:site_name" content="{{ og_site }}" />
   <meta property="og:locale" content="ja_JP" />
   <meta property="og:image" content="{{ og_image }}" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="{{ og_title }}" />
-  <meta name="twitter:description" content="{{ page.desc | default: site.description }}" />
+  <meta name="twitter:description" content="{{ page_desc }}" />
   <meta name="twitter:image" content="{{ og_image }}" />
   <script>(function(){try{var t=localStorage.getItem('theme');if(!t){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
