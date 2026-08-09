@@ -7,6 +7,10 @@ url: "https://yutaro0518.com"
 
 markdown: kramdown
 
+# GitHub Pages 標準対応プラグイン。sitemap.xml を自動生成（SEO・クロール最適化用）
+plugins:
+  - jekyll-sitemap
+
 # アセットのキャッシュ更新用（style.css?v= に使う）。CSSを変えたら数字を上げる
 asset_version: 9
 
