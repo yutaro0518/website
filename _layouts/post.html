@@ -1,6 +1,34 @@
 ---
 layout: blog
 ---
+  {%- if page.og_image -%}{%- assign post_image = '/blog/' | append: page.og_image | absolute_url -%}
+  {%- elsif page.thumbnail -%}{%- assign post_image = '/blog/' | append: page.thumbnail | absolute_url -%}
+  {%- else -%}{%- assign post_image = '/ogp.png' | absolute_url -%}{%- endif -%}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": {{ page.title | jsonify }},
+    "description": {{ page.excerpt | default: site.description | strip_html | strip_newlines | jsonify }},
+    "datePublished": "{{ page.date | date_to_xmlschema }}",
+    "dateModified": "{{ page.date | date_to_xmlschema }}",
+    "url": "{{ page.url | absolute_url }}",
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "{{ page.url | absolute_url }}" },
+    "image": "{{ post_image }}",
+    "inLanguage": "ja",
+    "author": {
+      "@type": "Person",
+      "name": "上野裕太郎",
+      "alternateName": "Yutaro Ueno",
+      "url": "https://yutaro0518.com/"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "上野裕太郎",
+      "url": "https://yutaro0518.com/"
+    }
+  }
+  </script>
   <article class="article">
     <a href="{{ '/blog/' | relative_url }}" class="article__back">← ブログ一覧へ戻る</a>
     <h1 class="article__title">{{ page.title }}</h1>
