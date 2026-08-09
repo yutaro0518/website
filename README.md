@@ -13,9 +13,8 @@
 ├─ _layouts/            ページの雛形（default / home / page / activities / blog / post）
 ├─ _includes/           共通パーツ（head / nav / social / scripts）
 ├─ index.html           トップ（名前だけのランディング。layout: home）
-├─ about.md             About me（本文だけ編集すればOK）
-├─ bio.md               Bio
-├─ research.md          Research
+├─ about.md             About（自己紹介＋経歴。旧 bio.md を統合。/bio/ はここへ301）
+├─ research.md          Research（研究テーマ・関心・論文・執筆・報告）
 ├─ activities.html      Activities（カード）
 ├─ blog/
 │   ├─ index.html       ブログ一覧（記事は自動で並ぶ）
@@ -61,7 +60,8 @@ thumbnail: images/xxx.jpeg  # blog/images/ に置いた画像（任意）
 
 ## ページ本文を直す
 
-- About / Bio / Research → `about.md` / `bio.md` / `research.md` の本文を Markdown で編集
+- About / Research → `about.md` / `research.md` の本文を Markdown で編集
+- トップの一文コピー・最新記事リスト → `_layouts/home.html`
 - Activities → `activities.html` のカードを編集
 - カテゴリの追加・並び順 → `_config.yml` の `categories_list`
 - デザイン → `style.css`
