@@ -7,12 +7,31 @@ layout: default
       <p class="hero-reading">Yutaro&nbsp;UENO</p>
     </div>
 
+    <a class="hero-scroll" href="#about" aria-label="About me へスクロール">
+      <span class="hero-scroll__label">About me</span>
+      <span class="hero-scroll__arrow" aria-hidden="true"></span>
+    </a>
+
     <div class="hero-footer">
       <div class="hf-social">
       {% include social.html %}
       </div>
     </div>
   </section>
+
+  {%- assign about_page = site.pages | where: "path", "about.md" | first -%}
+  {%- unless about_page -%}{%- assign about_page = site.pages | where: "url", "/about/" | first -%}{%- endunless -%}
+  {%- if about_page -%}
+  <section class="home-about" id="about">
+    <div class="home-about__inner">
+      <h2 class="home-about__title">About me</h2>
+      <div class="page-prose">
+        {{ about_page.content | markdownify | split: '<h3' | first }}
+      </div>
+      <a class="home-about__more" href="{{ '/about/' | relative_url }}">続きを読む<span aria-hidden="true"> →</span></a>
+    </div>
+  </section>
+  {%- endif -%}
 
   <script type="application/ld+json">
   {
