@@ -1,7 +1,7 @@
 ---
 title: "Booklog: 清水颯『AIに恋しちゃダメですか？』"  
 date: 2026-08-09  
-category:“Book”
+category: Book
 og_image: images/booklog_shimizuhayate.png
 ---
 タイトルに騙されてはいけない。タイトルから中身を甘く見てはいけない。タイトルの軽さとは反対に、重厚な哲学の歴史の片鱗を、AIと人間という関係から覗かせる、哲学の入門書でもあり、AI倫理の入門書でもあると思う。そんな1冊だ。
