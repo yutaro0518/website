@@ -29,6 +29,7 @@ layout: default
         {{ about_page.content | markdownify | split: '<h3' | first }}
       </div>
       <a class="home-about__more" href="{{ '/about/' | relative_url }}">続きを読む<span aria-hidden="true"> →</span></a>
+      <p class="home-about__hint" aria-hidden="true">さらにスクロールで About me へ</p>
     </div>
   </section>
   {%- endif -%}
