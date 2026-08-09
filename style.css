@@ -69,14 +69,12 @@ strong { color: var(--accent); font-weight: 600; }
   position: relative;
   gap: 20px;
 }
+/* 全画面ヒーローを廃したため、名前は常時表示（om.co のロゴ位置に相当） */
 .brand {
   display: flex; align-items: baseline; gap: 9px; white-space: nowrap;
   position: absolute; left: var(--pad); top: 50%;
   transform: translateY(-50%);
-  opacity: 0; pointer-events: none;
-  transition: opacity .35s ease;
 }
-.site-header.scrolled .brand { opacity: 1; pointer-events: auto; }
 .brand-jp { font-weight: 700; font-size: 1.02rem; letter-spacing: .02em; }
 .brand-en {
   font-family: var(--font-en);
@@ -196,54 +194,86 @@ strong { color: var(--accent); font-weight: 600; }
   color: var(--bg);
 }
 
-/* ===== Hero ===== */
-.hero {
-  position: relative; /* hero-footer / hero-scroll の絶対配置の基準 */
-  min-height: calc(100vh - 66px);
+/* ===== Home: intro（写真＋短い紹介） ===== */
+.home {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: clamp(52px, 8vw, 96px) var(--pad) clamp(40px, 6vw, 64px);
+}
+.home-intro {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: clamp(48px, 10vw, 96px) var(--pad);
-  text-align: center;
+  align-items: flex-start;
+  gap: clamp(24px, 4vw, 44px);
+  margin-bottom: clamp(56px, 9vw, 104px);
 }
-.hero-inner { max-width: 900px; }
-.hero-name {
-  font-size: clamp(3rem, 13vw, 8rem);
-  font-weight: 700;
-  letter-spacing: .04em;
-  line-height: 1.05;
+.home-intro__photo {
+  flex: none;
+  width: clamp(120px, 20vw, 190px);
+  height: clamp(120px, 20vw, 190px);
+  border-radius: 50%;
+  object-fit: cover;
+  filter: grayscale(1);
 }
-.hero-reading {
-  font-family: var(--font-en);
-  font-size: clamp(.85rem, 2vw, 1.05rem);
-  letter-spacing: .32em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-  margin-top: 22px;
-  padding-left: .32em; /* offset last-letter tracking */
-}
-.hero-tagline {
-  max-width: 30em;
-  margin: clamp(30px, 5vw, 46px) auto 0;
-  font-size: clamp(.95rem, 1.6vw, 1.12rem);
-  line-height: 1.85;
+.home-intro__text > p {
+  margin: 0 0 20px;
   color: var(--ink-soft);
+  font-size: clamp(1rem, 1.5vw, 1.1rem);
+  line-height: 1.9;
 }
-.hero-footer {
-  position: absolute;
-  left: 0; right: 0; bottom: 0;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 16px;
-  padding: 22px var(--pad);
-}
-.hf-left {
+.home-intro__text > p:last-child { margin-bottom: 0; }
+.home-intro__text strong { color: var(--ink); font-weight: 700; }
+
+/* ===== Home: 記事リスト ===== */
+.home-posts__label {
   font-family: var(--font-en);
   font-size: .78rem;
-  color: var(--ink-faint);
-  letter-spacing: .02em;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--ink);
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--ink);
+  display: inline-block;
+  margin-bottom: 6px;
 }
+.post-feed { list-style: none; margin: 0; padding: 0; }
+.post-feed__item { border-bottom: 1px solid var(--line); }
+.post-feed__item > a {
+  display: block;
+  padding: 22px 0;
+  text-decoration: none;
+  transition: opacity .2s;
+}
+.post-feed__item > a:hover { opacity: .62; }
+.post-feed__date {
+  display: block;
+  font-family: var(--font-en);
+  font-size: .76rem;
+  font-weight: 500;
+  letter-spacing: .1em;
+  color: var(--accent);
+  margin-bottom: 7px;
+}
+.post-feed__ttl {
+  display: block;
+  font-size: 1.06rem;
+  font-weight: 700;
+  line-height: 1.55;
+  color: var(--ink);
+}
+.home-posts__more {
+  display: inline-block;
+  margin-top: 34px;
+  font-size: .9rem;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 3px;
+  transition: border-color .2s;
+}
+.home-posts__more:hover { border-color: var(--ink); }
+
+/* 旧ヒーローで使っていたSNSアイコン列は、フッターで引き続き使用 */
 .hf-social { display: flex; align-items: center; gap: 16px; }
 .hf-social a {
   display: inline-flex;
@@ -253,90 +283,8 @@ strong { color: var(--accent); font-weight: 600; }
 .hf-social a:hover { color: var(--accent); transform: translateY(-2px); }
 .hf-social svg { width: 18px; height: 18px; fill: currentColor; }
 
-/* ===== Hero: About me へのスクロール誘導 ===== */
-.hero-scroll {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 26px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  color: var(--ink-faint);
-  text-decoration: none;
-  transition: color .2s;
-}
-.hero-scroll:hover { color: var(--ink); }
-.hero-scroll__label {
-  font-family: var(--font-en);
-  font-size: .7rem;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-}
-.hero-scroll__arrow {
-  width: 9px; height: 9px;
-  border-right: 1px solid currentColor;
-  border-bottom: 1px solid currentColor;
-  transform: rotate(45deg);
-  animation: heroScrollNudge 2.4s ease-in-out infinite;
-}
-@keyframes heroScrollNudge {
-  0%, 100% { transform: rotate(45deg) translate(0, 0); opacity: .55; }
-  50%      { transform: rotate(45deg) translate(3px, 3px); opacity: 1; }
-}
-
-/* ===== Home: About me セクション ===== */
-/* ===== Home: Recent writing ===== */
-.home-recent {
-  border-top: 1px solid var(--line);
-  padding: clamp(56px, 8vw, 96px) var(--pad) clamp(72px, 11vw, 128px);
-}
-.home-recent__inner { max-width: 760px; margin: 0 auto; }
-.home-recent__title {
-  font-family: var(--font-en);
-  font-size: .78rem;
-  font-weight: 600;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-  margin-bottom: clamp(20px, 3vw, 28px);
-}
-.home-recent__list { list-style: none; margin: 0; padding: 0; }
-.home-recent__item { border-top: 1px solid var(--line); }
-.home-recent__item:first-child { border-top: none; }
-.home-recent__item > a {
-  display: flex;
-  align-items: baseline;
-  gap: 18px;
-  padding: 16px 0;
-  color: var(--ink);
-  text-decoration: none;
-  transition: opacity .2s;
-}
-.home-recent__item > a:hover { opacity: .6; }
-.home-recent__date {
-  flex: none;
-  font-family: var(--font-en);
-  font-size: .74rem;
-  letter-spacing: .06em;
-  color: var(--ink-faint);
-}
-.home-recent__ttl { font-size: .98rem; font-weight: 500; line-height: 1.5; }
-.home-recent__more {
-  display: inline-block;
-  margin-top: 30px;
-  font-size: .9rem;
-  color: var(--ink);
-  text-decoration: none;
-  border-bottom: 1px solid var(--line);
-  padding-bottom: 3px;
-  transition: border-color .2s;
-}
-.home-recent__more:hover { border-color: var(--ink); }
-
 @media (max-width: 560px) {
-  .home-recent__item > a { flex-direction: column; gap: 5px; }
+  .home-intro { flex-direction: column; align-items: flex-start; gap: 22px; }
 }
 
 /* ページ遷移をクロスフェード（対応ブラウザのみ／非対応は通常遷移） */
@@ -345,13 +293,8 @@ strong { color: var(--accent); font-weight: 600; }
 ::view-transition-new(root) { animation-duration: .22s; }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-scroll__arrow { animation: none; }
   ::view-transition-old(root),
   ::view-transition-new(root) { animation: none; }
-}
-@media (max-width: 860px) {
-  /* SNSアイコン（右下）とスクロール誘導が近づきすぎないように */
-  .hero-scroll { bottom: 62px; }
 }
 
 /* ===== Sub-page layout ===== */
