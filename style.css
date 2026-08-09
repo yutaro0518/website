@@ -198,6 +198,7 @@ strong { color: var(--accent); font-weight: 600; }
 
 /* ===== Hero ===== */
 .hero {
+  position: relative; /* hero-footer / hero-scroll の絶対配置の基準 */
   min-height: calc(100vh - 66px);
   display: flex;
   align-items: center;
@@ -244,6 +245,74 @@ strong { color: var(--accent); font-weight: 600; }
 }
 .hf-social a:hover { color: var(--accent); transform: translateY(-2px); }
 .hf-social svg { width: 18px; height: 18px; fill: currentColor; }
+
+/* ===== Hero: About me へのスクロール誘導 ===== */
+.hero-scroll {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink-faint);
+  text-decoration: none;
+  transition: color .2s;
+}
+.hero-scroll:hover { color: var(--ink); }
+.hero-scroll__label {
+  font-family: var(--font-en);
+  font-size: .7rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+}
+.hero-scroll__arrow {
+  width: 9px; height: 9px;
+  border-right: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  transform: rotate(45deg);
+  animation: heroScrollNudge 2.4s ease-in-out infinite;
+}
+@keyframes heroScrollNudge {
+  0%, 100% { transform: rotate(45deg) translate(0, 0); opacity: .55; }
+  50%      { transform: rotate(45deg) translate(3px, 3px); opacity: 1; }
+}
+
+/* ===== Home: About me セクション ===== */
+.home-about {
+  border-top: 1px solid var(--line);
+  padding: clamp(56px, 8vw, 96px) var(--pad) clamp(72px, 11vw, 128px);
+}
+.home-about__inner { max-width: 760px; margin: 0 auto; }
+.home-about__title {
+  font-family: var(--font-en);
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: clamp(24px, 4vw, 36px);
+}
+.home-about__more {
+  display: inline-block;
+  margin-top: 34px;
+  font-size: .92rem;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 3px;
+  transition: border-color .2s;
+}
+.home-about__more:hover { border-color: var(--ink); }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-scroll__arrow { animation: none; }
+}
+@media (max-width: 860px) {
+  /* SNSアイコン（右下）とスクロール誘導が近づきすぎないように */
+  .hero-scroll { bottom: 62px; }
+}
 
 /* ===== Sub-page layout ===== */
 .page {
