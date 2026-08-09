@@ -17,19 +17,6 @@
     }
   })();
 
-  // Landing only: fade the brand into the nav once the hero is scrolled past
-  (function () {
-    var header = document.querySelector('.site-header');
-    var hero = document.querySelector('.hero');
-    if (!header || !hero) return;
-    function onScroll() {
-      if (window.scrollY > window.innerHeight * 0.6) header.classList.add('scrolled');
-      else header.classList.remove('scrolled');
-    }
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-  })();
-
   // Dark / light theme toggle (L / D pill). Initial theme set by inline <head> script.
   document.addEventListener('click', function (e) {
     var b = e.target.closest('.theme-toggle');
