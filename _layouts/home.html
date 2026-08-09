@@ -6,7 +6,9 @@ layout: default
 {% if site.portrait %}      <img class="home-intro__photo" src="{{ site.portrait | relative_url }}" alt="上野裕太郎" width="220" height="220" />
 {% endif %}      <div class="home-intro__text">
         <h1 class="home-intro__name">上野裕太郎｜Yutaro UENO</h1>
-        <p>社会とテクノロジー、あるべき社会のアーキテクチャについて、理論社会学を中心に人文・社会科学の立場から考えています。</p>
+        <!-- 文節ごとに span で包むと、その境目でしか改行されない（語の途中で割れるのを防ぐ）。
+             文言を変えるときは、区切りたい位置で span を分け直してください -->
+        <p class="home-intro__lead"><span>社会とテクノロジー、</span><span>あるべき社会のアーキテクチャについて、</span><span>理論社会学を中心に</span><span>人文・社会科学の立場から考えています。</span></p>
       </div>
     </section>
 

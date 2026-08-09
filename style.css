@@ -215,6 +215,10 @@ strong { color: var(--accent); font-weight: 600; }
   filter: grayscale(1);
 }
 .home-intro__text { max-width: 40em; }  /* 本文が長くなりすぎないように */
+/* リード文は文節単位でしか改行させない（語の途中で割れるのを防ぐ）。
+   span は home.html 側で文節ごとに入れてある */
+.home-intro__lead { text-wrap: balance; }
+.home-intro__lead span { display: inline-block; }
 .home-intro__name {
   font-size: clamp(1.4rem, 2.6vw, 1.8rem);
   font-weight: 700;
@@ -324,6 +328,18 @@ strong { color: var(--accent); font-weight: 600; }
 
 @media (max-width: 560px) {
   .home-intro { flex-direction: column; align-items: flex-start; gap: 22px; }
+}
+
+/* 日本語の改行位置を文節単位に寄せ、語の途中で割れるのを防ぐ。
+   auto-phrase 非対応ブラウザ（Firefox 等）では従来どおりの折り返しに戻るだけ */
+.home-intro__text p,
+.post-feed__ex,
+.page-prose p,
+.page-prose li,
+.article__body p,
+.article__body li {
+  word-break: auto-phrase;
+  text-wrap: pretty;
 }
 
 /* ページ遷移をクロスフェード（対応ブラウザのみ／非対応は通常遷移） */
