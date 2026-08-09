@@ -81,7 +81,6 @@ desc: 上野裕太郎（Yutaro UENO）の研究テーマ・研究関心・論文
 PMI ThinkTank での調査・執筆。
 
 - [「U40世代が感じる“負担”と“閉塞”――世代対立では捉えきれない政治不信」](https://note.com/pmi_thinktank/n/nbe7f2210fe7f)（執筆）
-- 「「高齢者との対立」ではない――U40世代に広がる“負担感”と“閉塞感”の正体」（執筆）
 - [「「急な解散」と「政党再編」は、さらなる政治不信につながるのか？―2026年1月実施「政治に関する意識調査」から考える―」](https://note.com/pmi_thinktank/n/n32427fd0b91a)（執筆）
 - [「日本は“民主主義の危機”？ 本当の課題と市民・メディアの役割とは」](https://note.com/pmi/n/n5d9e52fe8e0c)（執筆）
 - [「民主主義への提言「Democracy 2.0」〜Z・ミレニアル世代が問い直す日本と政治のいま〜」](https://note.com/pmi/n/n84f4ac7ff56a?sub_rt=share_pb)（分担執筆）
