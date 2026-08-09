@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yutaro0518.com/sitemap.xml
