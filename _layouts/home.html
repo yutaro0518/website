@@ -5,10 +5,11 @@ layout: default
     <div class="hero-inner">
       <h1 class="hero-name">上野裕太郎</h1>
       <p class="hero-reading">Yutaro&nbsp;UENO</p>
+      <p class="hero-tagline">社会とテクノロジー、社会のアーキテクチャについて考えています。</p>
     </div>
 
-    <a class="hero-scroll" href="#about" aria-label="About me へスクロール">
-      <span class="hero-scroll__label">About me</span>
+    <a class="hero-scroll" href="#recent" aria-label="最近の書きものへスクロール">
+      <span class="hero-scroll__label">Recent</span>
       <span class="hero-scroll__arrow" aria-hidden="true"></span>
     </a>
 
@@ -19,20 +20,21 @@ layout: default
     </div>
   </section>
 
-  {%- assign about_page = site.pages | where: "path", "about.md" | first -%}
-  {%- unless about_page -%}{%- assign about_page = site.pages | where: "url", "/about/" | first -%}{%- endunless -%}
-  {%- if about_page -%}
-  <section class="home-about" id="about">
-    <div class="home-about__inner">
-      <h2 class="home-about__title">About me</h2>
-      <div class="page-prose">
-        {{ about_page.content | markdownify | split: '<h3' | first }}
-      </div>
-      <a class="home-about__more" href="{{ '/about/' | relative_url }}">続きを読む<span aria-hidden="true"> →</span></a>
-      <p class="home-about__hint" aria-hidden="true">さらにスクロールで About me へ</p>
+  <section class="home-recent" id="recent">
+    <div class="home-recent__inner">
+      <h2 class="home-recent__title">Recent writing</h2>
+      <ul class="home-recent__list">
+{% assign recent = site.pages | where_exp: "p", "p.date" | sort: "date" | reverse %}
+{% for p in recent limit: 5 %}{% assign link = p.url | remove: '.html' | relative_url %}        <li class="home-recent__item">
+          <a href="{{ link }}">
+            <span class="home-recent__date">{{ p.date | date: "%Y.%m.%d" }}</span>
+            <span class="home-recent__ttl">{{ p.title }}</span>
+          </a>
+        </li>
+{% endfor %}      </ul>
+      <a class="home-recent__more" href="{{ '/blog/' | relative_url }}">すべての記事<span aria-hidden="true"> →</span></a>
     </div>
   </section>
-  {%- endif -%}
 
   <script type="application/ld+json">
   {
@@ -41,6 +43,7 @@ layout: default
     "name": "上野裕太郎",
     "alternateName": "Yutaro Ueno",
     "url": "https://yutaro0518.com/",
+    "description": "社会とテクノロジー、社会のアーキテクチャについて考えている社会学研究者。",
     "jobTitle": ["リサーチャー", "社会学研究者"],
     "worksFor": [
       { "@type": "Organization", "name": "Sakana AI株式会社", "url": "https://sakana.ai/" },
