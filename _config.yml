@@ -7,6 +7,9 @@ url: "https://yutaro0518.com"
 
 markdown: kramdown
 
+# Google Analytics (GA4) の測定ID。空にすればタグごと出力されない
+google_analytics: "G-7LXE22QHWP"
+
 # GitHub Pages 標準対応プラグイン。sitemap.xml を自動生成（SEO・クロール最適化用）
 plugins:
   - jekyll-sitemap
