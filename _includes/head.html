@@ -1,7 +1,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{% if page.head_title %}{{ page.head_title }}{% elsif page.layout == "post" %}{{ page.title }}｜上野裕太郎{% elsif page.title %}{{ page.title }}｜上野裕太郎{% else %}{{ site.title }}{% endif %}</title>
-  {%- assign page_desc = page.desc | default: page.excerpt | default: site.description | strip_html | strip_newlines | escape -%}
+  {%- comment -%}
+    説明文の優先順位: desc → excerpt → 記事本文の冒頭 → サイト共通の説明。
+    3番目のフォールバックは記事(post)のみ。excerpt を書いていない記事でも
+    SNSカードと検索結果に、その記事の中身が出るようにするため。
+    本文は site.pages 経由で取る（トップの Latest 一覧と同じ取り方）。
+  {%- endcomment -%}
+  {%- assign page_desc = page.desc | default: page.excerpt -%}
+  {%- unless page_desc -%}
+    {%- if page.layout == "post" -%}
+      {%- assign self_page = site.pages | where: "path", page.path | first -%}
+      {%- unless self_page -%}{%- assign self_page = site.pages | where: "url", page.url | first -%}{%- endunless -%}
+      {%- if self_page -%}
+        {%- assign page_desc = self_page.content | markdownify | strip_html | normalize_whitespace | truncate: 120 -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endunless -%}
+  {%- assign page_desc = page_desc | default: site.description | strip_html | strip_newlines | escape -%}
   <meta name="description" content="{{ page_desc }}" />
   <link rel="canonical" href="{{ page.url | absolute_url }}" />
   {%- if page.layout == "post" -%}
