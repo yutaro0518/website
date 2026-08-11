@@ -2,7 +2,7 @@
 title: "世界はblogで動いている"  
 date: 2026-08-11  
 category: "Essay"
-og_image: images/blogisallweneed/blogisallweneed.png
+og_image: images/blogisallweneed/blogisallweneed2.png
 ---
 2026年上半期、世界の議論を動かしたテキストを思い出してほしい。国連の報告書でも査読誌の論文でも新聞の一面でもない。1月26日に個人サイトに載った約2万語のエッセイ、2月26日に企業サイトに出た声明、4月19日に企業アカウントが投稿した22項目の箇条書き。この3つのほうが、はるかに多くの議論を動かした。
 
