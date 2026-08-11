@@ -58,6 +58,11 @@ strong { color: var(--accent); font-weight: 600; }
   backdrop-filter: saturate(180%) blur(14px);
   border-bottom: 1px solid var(--line);
 }
+/* トップページのみ：名前は本文の見出しに大きく出るのでヘッダーでは省き、
+   区切り線も外して intro と地続きに見せる */
+.site-header--bare { border-bottom: none; }
+.site-header--bare .brand { display: none; }
+
 .nav-inner {
   max-width: var(--max);
   margin: 0 auto;
