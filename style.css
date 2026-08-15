@@ -630,7 +630,7 @@ strong { color: var(--accent); font-weight: 600; }
 .blog-header .blog-logo { display: inline-block; }
 .blog-logo {
   font-size: clamp(30px, 5vw, 44px);
-  font-weight: 700;
+  font-weight: 500;  /* 44px では 700 は重すぎたため */
   letter-spacing: -0.02em;
   color: var(--ink);
   display: inline-block;
