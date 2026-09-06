@@ -2,8 +2,8 @@
 title: "世界はblogで動いている"  
 date: 2026-08-11  
 category: "Essay"
-og_image: images/blogisallweneed/blogisallweneed2.png
-twitterImage: images/blogisallweneed/blogisallweneed2.png
+og_image: assets/blogisallweneed/blogisallweneed2.png
+twitterImage: assets/blogisallweneed/blogisallweneed2.png
 ---
 2026年上半期、世界の議論を動かしたテキストを思い出してほしい。国連の報告書でも査読誌の論文でも新聞の一面でもない。1月26日に個人サイトに載った約2万語のエッセイ、2月26日に企業サイトに出た声明、4月19日に企業アカウントが投稿した22項目の箇条書き。この3つのほうが、はるかに多くの議論を動かした。
 
@@ -67,7 +67,7 @@ blogが世界観を運ぶのに対し、Tweetが運ぶのはタイミングだ�
 
 2026年4月19日、Palantirの公式Twitterアカウントが、CEOのAlex Karpと同社Nicholas Zamiskaによる著書『The Technological Republic』の要点を22項目にまとめた投稿を出した。出版から1年の節目である。内容は兵役の復活の主張、第二次大戦後の秩序への評価、AI兵器、宗教と権力、シリコンバレーが暴力犯罪に対して果たすべき役割にまで及ぶ。マニフェストと呼ばれ、広く批判された。批判の中心は思想の内容だけではない。哲学者のMark Coeckelberghは、政党や政府が政治的ビジョンを競うのは当然だが、国家の安全保障や監視に深く組み込まれた私企業がそれをやることは別の問題だと書いた。選挙も経ず、公衆に対する説明責任も負わない主体が、政治的綱領を掲げている。
 
-![PalantirのTweet](images/blogisallweneed/palantir-tweet.png)
+![PalantirのTweet](assets/blogisallweneed/palantir-tweet.png)
 
 書籍という制度には編集者がいて、出版社の判断があり、書評という事後の検証がある。今回起きたのは、その本の要約が著者たちの側から編集を経ずに一次資料として投げ出されたことだ。ある批評家は皮肉として「あの本はTweetで済んだはずだ」と書いていたが、実際にTweetになった。書籍が担っていた綱領の機能を、SNSの投稿が引き受けている。
 
@@ -77,13 +77,13 @@ blogが世界観を運ぶのに対し、Tweetが運ぶのはタイミングだ�
 
 安野貴博は2024年の東京都知事選で、マニフェストをGitHubのリポジトリとして公開し、Issue（課題提起）とPull Request（変更提案）を有権者から受け付けた。2025年に新党チームみらいを立ち上げると、参院選前に「バージョン0.1（超初期版）を批判覚悟で公開します」とTwitterで宣言し、議論の途中のマニフェストを出した。AIが有権者から話を聞き取り、そのままGitHubへ変更提案を送る「しゃべれるマニフェスト」を通じて、1300件を超える提案が集まった。7月の参院選で比例代表から当選し、政党要件を満たした。
 
-![安野貴博のTweet](images/blogisallweneed/anno.png)
+![安野貴博のTweet](assets/blogisallweneed/anno.png)
 
 政策文書の存在形式が変わった。完成品として発表される公約から、更新履歴のあるテキストへ。バージョン番号がつき、誰がいつ何を変えたのかが追跡でき、外部から差分を提案できる。ソフトウェア開発の作法であり、同時にblog文化の作法でもある。書いて出す、批判を受ける、直す。この回転を政治が採用したとき、それは選挙で議席になった。
 
 もう1つ、Tweetが世界の語彙そのものを変えた例がある。2025年2月2日、Andrej KarpathyがTwitterに、新しいプログラミングの方法があって自分はそれをvibe codingと呼んでいる、と投稿した。450万回以上表示された。3月にはMerriam-Websterがトレンド語として掲載し、11月にはCollins辞典が2025年の言葉に選んだ。1つの投稿から9ヶ月で、産業が自分自身を語る語彙になった。定義や辞書のような、本来は制度が時間をかけて決めるものが、投稿から始まっている。
 
-![Vibe coding](images/blogisallweneed/vibe-coding.png)
+![Vibe coding](assets/blogisallweneed/vibe-coding.png)
 
 ## 議題設定の実権が制度の外側へ移った
 

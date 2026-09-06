@@ -2,11 +2,11 @@
 title: "Booklog: 岡野原大輔『ヒトとAI』"  
 date: 2026-08-01  
 category: "Book"
-og_image: images/booklog_okanohara.png
+og_image: assets/book_okanohara.png
 ---
 岡野原大輔さんは日本を代表するAI開発企業の1つ、Preferred Networks（PFN）の共同創業者で、2026年8月現在、同社の社長を務める、日本のAI研究者だ。そんな岡野原さんは過去にも岩波書店から人工知能技術に関する一般向けの解説書はいくつか出されていたが、ここまで人文チックな要素を含む本はこれが初めてではないだろうか。
 
-![『ヒトとAI』書影](images/okanohara.jpg){: .cover}
+![『ヒトとAI』書影](assets/okanohara.jpg){: .cover}
 
 [岡野原さんのブログ](https://hillbig.github.io/#%E5%A5%BD%E3%81%8D%E3%81%AA%E6%9C%AC-20%CE%B1%E9%81%B8)を見ると、岡野原さんの読書家の側面が見える。そして、今回出版された、『ヒトとAI』を読むと合点がいく。技術解説本とは異なる抽象水準で、それでいて確実に抑えるべきタームや仕組みについては丁寧に解説されているのが印象的だった。現在のAIの技術動向と今後の展望をまずは新書で簡単に抑えておきたい人にとって、これほど最良な本はなかったのではないだろうか。
 

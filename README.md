@@ -19,7 +19,7 @@
 ├─ blog/
 │   ├─ index.html       ブログ一覧（記事は自動で並ぶ）
 │   ├─ *.md             記事（★ここに .md を置くだけ★）
-│   └─ images/          記事のサムネイル・画像
+│   └─ assets/          記事のサムネイル・画像
 ├─ style.css            デザイン（全ページ共通）
 └─ CNAME                独自ドメイン設定
 ```
@@ -35,16 +35,16 @@ date: 2026-08-01
 category: "Essay"          # 1つだけ付ける場合（Essay / Book / Log。未指定は Log）
 # categories: [Essay, Book]  # 複数付けたい場合はこちら（category の代わりに）
 excerpt: "一覧に出る要約。"
-thumbnail: images/xxx.jpeg  # blog/images/ に置いた画像（任意）
+thumbnail: assets/xxx.jpeg  # blog/assets/ に置いた画像（任意）
 ---
 
 本文を Markdown で。
 ```
 
 > **OGP画像（SNSシェア用）**：記事の front matter に `og_image:` を書くと、その画像がSNSカードに使われます。
-> 画像は自分で作って `blog/images/` に置き、パスを指定します（未指定なら `thumbnail`、それも無ければ共通の `ogp.png`）。
+> 画像は自分で作って `blog/assets/` に置き、パスを指定します（未指定なら `thumbnail`、それも無ければ共通の `ogp.png`）。
 > ```yaml
-> og_image: images/xxx-og.png   # blog/images/ に置いた画像
+> og_image: assets/xxx-og.png   # blog/assets/ に置いた画像
 > ```
 
 > **カテゴリを複数付けたいとき**は `category:` の代わりに `categories:` を使います。
@@ -55,7 +55,7 @@ thumbnail: images/xxx.jpeg  # blog/images/ に置いた画像（任意）
 
 > **ポイント**
 > - 見出しは `## 見出し` のように `#` の後に**半角スペース**（kramdown 仕様）
-> - `thumbnail` は `blog/images/` 内の実ファイル名と拡張子まで一致させる
+> - `thumbnail` は `blog/assets/` 内の実ファイル名と拡張子まで一致させる
 > - ファイル名がそのまま URL になります（例: `2026-08-01-my-post.md` → `/blog/2026-08-01-my-post/`）
 
 ## ページ本文を直す

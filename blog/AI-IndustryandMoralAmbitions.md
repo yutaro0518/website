@@ -2,7 +2,7 @@
 title: "AI産業と倫理的野心"  
 date: 2026-08-01  
 categories: [Moral Ambitions, Essay]
-og_image: images/AI-IndustryandMoralAmbitions.png
+og_image: assets/AI-IndustryandMoralAmbitions.png
 ---  
 倫理的野心を人生のモットーの1つに掲げてから、出会った人にこんなことを言われたことがあった。
 

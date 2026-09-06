@@ -3,8 +3,8 @@ title: "社会思想と公共心に関するメモ"
 date: 2026-09-03
 category: "Essay"
 excerpt: "「思想ブーム」の問題、見えてきた空白地点。そして、公共心はどこへ行くのか。"
-og_image: images/socialthought-and-publicmind/social-thought.png
-twitterImage: images/socialthought-and-publicmind/social-thought.png
+og_image: assets/socialthought-and-publicmind/social-thought.png
+twitterImage: assets/socialthought-and-publicmind/social-thought.png
 ---
 ## 「思想」がブームになっている
 

@@ -2,12 +2,12 @@
 title: "Readingmemo: Jun. 2026"  
 date: 2026-07-01  
 category: "Book"
-og_image: images/readingmemo202606/readingmemo202606.png
+og_image: assets/readingmemo202606/readingmemo202606.png
 ---
 ## 安倍晋三
 著：服部龍二／出版：中央公論新社
 
-![書影1](images/readingmemo202606/readingmemo-2606-1.jpg){: .cover}
+![書影1](assets/readingmemo202606/readingmemo-2606-1.jpg){: .cover}
 
 あらかじめ言っておくと、僕は安倍晋三個人については否定的だが、政策については一定評価している（主に安全保障・外交）。しかし、安倍晋三個人への否定的な感情から、そのことさえ、認めることに抵抗を持ち続けていた。
 
@@ -20,7 +20,7 @@ og_image: images/readingmemo202606/readingmemo202606.png
 ## 生成AIの安全性入門
 著：綿岡晃輝／出版：技術評論社
 
-![書影2](images/readingmemo202606/readingmemo-2606-2.jpg){: .cover}
+![書影2](assets/readingmemo202606/readingmemo-2606-2.jpg){: .cover}
 
 タイトルの通り、生成AIの安全性について体系的にまとめられた入門書。入門書と言って舐めてかかるとその内容の濃さに疲れてしまうくらい。骨太の入門書。
 
@@ -31,7 +31,7 @@ og_image: images/readingmemo202606/readingmemo202606.png
 ## ネオ君主論
 著：カーティス・ヤーヴィン／出版：PHP研究所
 
-![書影3](images/readingmemo202606/readingmemo-2606-3.jpg){: .cover}
+![書影3](assets/readingmemo202606/readingmemo-2606-3.jpg){: .cover}
 
 読んでいるのが苦痛でたまらない。こんなに不快な本は他にないのではないだろうか。想像の10倍は苦痛だ。文字も大きいし、行間も広い。自己啓発書かと思ってしまった。
 
@@ -46,7 +46,7 @@ DOGEの創設や彼らがやろうとしていたことを考えると、ヤー�
 ## 曖昧な弱者の時代
 著：伊藤昌亮／出版：岩波書店
 
-![書影4](images/readingmemo202606/readingmemo-2606-4.jpg){: .cover}
+![書影4](assets/readingmemo202606/readingmemo-2606-4.jpg){: .cover}
 
 「ひろゆき論」で話題を集めたメディア研究者の伊藤さんの新刊。伊藤さんの論考で特に面白いのは参政党についての分析。参政党は土地は守るが、空は守らないという。外国人による土地取得規制や、入国規制などには積極的なのに、気候変動対策、脱炭素など、大気には関心がないというもの。
 
@@ -59,7 +59,7 @@ DOGEの創設や彼らがやろうとしていたことを考えると、ヤー�
 ## 観光を忘れた日本
 著：山口誠／出版：講談社
 
-![書影5](images/readingmemo202606/readingmemo-2606-5.jpg){: .cover}
+![書影5](assets/readingmemo202606/readingmemo-2606-5.jpg){: .cover}
 
 パスポート取得率の低下や、国外旅行の減少などが叫ばれて久しいが、そもそも観光とはなんだろう？という問いから始まり、日本における観光需要と近年のインバウントの盛り上がりの影で、「観光を忘れた」という問題設定を行う1冊。
 
