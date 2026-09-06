@@ -2,11 +2,11 @@
 title: "Booklog: 林 凌『新・消費論』"  
 date: 2026-08-05  
 category: "Book" 
-og_image: images/booklog_ryohayashi.png
+og_image: assets/booklog_ryohayashi.png
 ---
 消費者研究で有名な社会学者、林凌さんの新刊が出た。前回の『〈消費者〉の誕生』はいわゆる研究書だが、今回は中公新書ラクレから。読みやすさ、とっつきやすさがある。
 
-![『新・消費論I』書影](images/ryohayashi.jpg){: .cover}
+![『新・消費論I』書影](assets/ryohayashi.jpg){: .cover}
 
 そう思って読み始めると、その議論の丁寧さと論理の緻密さに脳が汗をかく感覚に襲われた。しかし、敵が敵だけにこれは仕方ないし、こうあるべきなのだと思う。この本で批判の対象となるのは、「〇〇消費」というキーワードで使われることが多い、「消費」という概念だ。
 

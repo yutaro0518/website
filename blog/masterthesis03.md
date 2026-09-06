@@ -3,7 +3,7 @@ title: "第3回 「気候変動の影響で」という8文字から始める"
 date: 2026-08-03  
 category: Notes from the Thesis
 excerpt: "修士論文を元にしたBlogシリーズ第3弾"
-og_image: images/masterthesis03.png
+og_image: assets/masterthesis03.png
 ---
 ## **正論では現場は動かない**
 ここまで、日本のテレビが猛暑や豪雨を大量に報じながら気候変動にほとんど言及しないこと（第1回）、そしてその背景に、視聴者像への最適化、説教臭さへの恐れ、気候変動の非・出来事性、映像主義という幾重もの構造があること（第2回)を見てきた。
