@@ -20,12 +20,10 @@ desc: 上野裕太郎（Yutaro UENO）の短いメモ。読書や研究のあい
 {% if notes.size > 0 %}    <ul class="tweets">
 {% for n in notes %}      <li class="tweet">
         <div class="tweet__main">
-          <div class="tweet__head">
-            <span class="tweet__name">上野裕太郎</span>
-            <span class="tweet__handle">@yutaro_0518</span>
-{% if n.posted %}            <span class="tweet__dot" aria-hidden="true">·</span>
+{% if n.posted %}          <div class="tweet__head">
             <time class="tweet__time" datetime="{{ n.posted | date_to_xmlschema }}" title="{{ n.posted | date: '%Y年%-m月%-d日 %H:%M' }}">{{ n.posted | date: "%-m月%-d日" }}</time>
-{% endif %}          </div>
+          </div>
+{% endif %}
           <div class="tweet__body">{{ n.content | markdownify }}</div>
         </div>
       </li>

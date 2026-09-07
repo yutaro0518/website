@@ -350,17 +350,16 @@ strong { color: var(--accent); font-weight: 600; }
   display: flex;
   align-items: baseline;
   flex-wrap: wrap;
-  gap: 5px;
-  margin-bottom: 3px;
-  font-size: .9rem;
+  margin-bottom: 6px;
   line-height: 1.4;
 }
-.tweet__name { font-weight: 700; color: var(--ink); }
-.tweet__handle,
-.tweet__dot,
-.tweet__time { color: var(--ink-faint); font-weight: 400; }
-.tweet__handle, .tweet__time { font-family: var(--font-en); font-size: .84rem; }
-.tweet__time { cursor: help; }
+.tweet__time {
+  font-family: var(--font-en);
+  font-size: .8rem;
+  letter-spacing: .04em;
+  color: var(--accent);
+  cursor: help;
+}
 
 .tweet__body {
   font-size: .97rem;
