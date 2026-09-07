@@ -19,7 +19,6 @@ desc: 上野裕太郎（Yutaro UENO）の短いメモ。読書や研究のあい
 {% assign notes = site.notes | sort: "posted" | reverse %}
 {% if notes.size > 0 %}    <ul class="tweets">
 {% for n in notes %}      <li class="tweet">
-        <div class="tweet__avatar" aria-hidden="true">{% if site.portrait %}<img src="{{ site.portrait | relative_url }}" alt="" />{% else %}上{% endif %}</div>
         <div class="tweet__main">
           <div class="tweet__head">
             <span class="tweet__name">上野裕太郎</span>
