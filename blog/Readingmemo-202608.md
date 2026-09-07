@@ -2,12 +2,12 @@
 title: "ReadingmemoBooklog: Aug. 2026"
 date: 2026-09-06
 category: “Book”
-og_image: images/xxx.png
+og_image: assets/readingmemo202608/ogppng.png
 ---
 ## Project Maven
 著：Katrina Manson／出版：W W Norton&Co Inc.
 
-!["Project Maven"書影](images/hayateshimizu.jpg){: .cover}
+!["Project Maven"書影](assets/readingmemo202608/Project-Maven.png){: .cover}
 
 最近日本でも話題のPalantirが開発したことで知られるMaven Smart System(MSS)がどのようにして国防総省に導入されるに至ったのか、そしてMSSが戦場をどう変えているのか、100人以上へのインタビューやBloomberg記者の著者による取材に基づいて書かれた1冊。
 
@@ -18,7 +18,7 @@ og_image: images/xxx.png
 ## 日本政治思想
 著：松沢弘陽／出版：岩波書店
 
-!["Project Maven"書影](images/hayateshimizu.jpg){: .cover}
+!["日本政治思想"書影](assets/readingmemo202608/seiji-shisou.png){: .cover}
 
 松沢弘陽氏の放送大学での授業を元にしたテクスト。帯にも書いているが、日本における「思想の不在」を憂い、そして問題意識を持ち、「日本政治思想」を確立するために奮闘した思想家の”思想”とその系譜が丁寧かつ、分かりやすくまとめられている1冊。
 
@@ -33,7 +33,8 @@ og_image: images/xxx.png
 ## 不平等の再検討
 著：アマルティア・セン／出版：岩波書店
 
-!["Project Maven"書影](images/hayateshimizu.jpg){: .cover}
+!["Inequality-Reexamined"書影](assets/readingmemo202608/Inequality-Reexamined.png)
+{: .cover}
 
 人間の能力って何だろう、能力に応じてできることもあれば、できないこともあるよなみたいなことを考えていた時に、ちゃんと読まねばということで改めて手に取った1冊。
 
@@ -48,7 +49,8 @@ og_image: images/xxx.png
 ## 明六社
 著：河野有理／出版：中央公論新社
 
-!["Project Maven"書影](images/hayateshimizu.jpg){: .cover}
+!["Meirokusha"書影](assets/readingmemo202608/Meirokusha.png)
+{: .cover}
 
 日本政治思想でも言及されていた福沢諭吉について、そして明六社について理解しておきたいなと思って手に取った1冊。
 
@@ -59,7 +61,8 @@ og_image: images/xxx.png
 ## 海辺のカフカ
 著：村上春樹／出版：新潮社
 
-!["Project Maven"書影](images/hayateshimizu.jpg){: .cover}
+!["Kafka-on-the-Shore"書影](assets/readingmemo202608/Kafka-on-the-Shore.png)
+{: .cover}
 
 ちょっとプライベートで悲しいことがあったので逃避も兼ねて『海辺のカフカ』に。僕のジェンダーにかかわらず年上の方が好きな感じがこの本を読むと手に取るような実感として振ってくる。とくにさくら。完全に「カフカくん」って呼ばれたいだけ。
 
