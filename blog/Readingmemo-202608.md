@@ -1,7 +1,7 @@
 ---
-title: "ReadingmemoBooklog: Aug. 2026"
+title: "Readingmemo: Aug. 2026"
 date: 2026-09-06
-category: “Book”
+category: "Book"
 og_image: assets/readingmemo202608/ogppng.png
 ---
 ## Project Maven
