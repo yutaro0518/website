@@ -321,59 +321,80 @@ strong { color: var(--accent); font-weight: 600; }
   .post-feed__date { text-align: left; padding-top: 0; margin-bottom: 7px; }
 }
 
-/* ===== Notes（つぶやき） ===== */
-.notes {
-  display: grid;
-  grid-template-columns: minmax(0, 108px) 1fr;
+/* ===== Notes（つぶやき）: タイムライン風 ===== */
+.notes-page {
+  max-width: 620px;
+  margin: 0 auto;
+  padding: clamp(44px, 7vw, 72px) var(--pad) clamp(48px, 8vw, 80px);
 }
-.notes__label {
-  text-align: right;
-  padding-right: clamp(16px, 3vw, 30px);
+.notes-page__title {
   font-family: var(--font-en);
-  font-size: 1.02rem;
-  font-weight: 600;
+  font-size: 1.32rem;
+  font-weight: 700;
   letter-spacing: .01em;
+  color: var(--ink);
+  margin-bottom: 22px;
+}
+.tweets { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+
+.tweet {
+  display: flex;
+  gap: 13px;
+  padding: 17px 4px 18px;
+  border-bottom: 1px solid var(--line);
+  transition: background-color .15s;
+}
+.tweet:hover { background: var(--bg-alt); }
+
+.tweet__avatar {
+  flex: none;
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--accent-soft);
   color: var(--accent);
-  line-height: 1.5;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.05rem; font-weight: 700;
+  user-select: none;
 }
-.notes__body {
-  border-left: 1px solid var(--accent);
-  padding-left: clamp(20px, 4vw, 44px);
-  padding-bottom: 8px;
+.tweet__avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+.tweet__main { min-width: 0; flex: 1; }
+
+.tweet__head {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 3px;
+  font-size: .9rem;
+  line-height: 1.4;
 }
-.note-feed { list-style: none; margin: 0; padding: 0; }
-.note-feed__item + .note-feed__item {
-  margin-top: clamp(28px, 4vw, 40px);
-  padding-top: clamp(28px, 4vw, 40px);
-  border-top: 1px solid var(--line);
-}
-.note-feed__date {
-  display: block;
-  font-family: var(--font-en);
-  font-size: .76rem;
-  font-weight: 500;
-  letter-spacing: .08em;
-  color: var(--accent);
-  margin-bottom: 9px;
-}
-.note-feed__text {
-  max-width: 42em;
+.tweet__name { font-weight: 700; color: var(--ink); }
+.tweet__handle,
+.tweet__dot,
+.tweet__time { color: var(--ink-faint); font-weight: 400; }
+.tweet__handle, .tweet__time { font-family: var(--font-en); font-size: .84rem; }
+.tweet__time { cursor: help; }
+
+.tweet__body {
   font-size: .97rem;
-  line-height: 1.9;
+  line-height: 1.75;
   color: var(--ink);
   word-break: auto-phrase;
   text-wrap: pretty;
 }
-.note-feed__text > p { margin: 0 0 14px; }
-.note-feed__text > p:last-child { margin-bottom: 0; }
-.note-feed__text a { color: var(--ink); text-decoration: underline; }
-.note-feed__date--missing { color: var(--ink-faint); }
-.note-feed__empty { color: var(--ink-faint); font-size: .95rem; }
+.tweet__body > p { margin: 0 0 10px; }
+.tweet__body > p:last-child { margin-bottom: 0; }
+.tweet__body a { color: var(--accent); text-decoration: none; }
+.tweet__body a:hover { text-decoration: underline; }
+.tweet__body img { max-width: 100%; border-radius: 14px; margin-top: 10px; }
 
-@media (max-width: 680px) {
-  .notes { grid-template-columns: 1fr; }
-  .notes__label { text-align: left; padding-right: 0; margin-bottom: 18px; }
-  .notes__body { border-left: none; padding-left: 0; }
+.tweets__empty { color: var(--ink-faint); font-size: .95rem; }
+
+@media (max-width: 560px) {
+  .tweet { gap: 11px; }
+  .tweet__avatar { width: 36px; height: 36px; font-size: .95rem; }
 }
 
 /* 旧ヒーローで使っていたSNSアイコン列は、フッターで引き続き使用 */
