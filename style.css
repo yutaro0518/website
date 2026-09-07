@@ -321,6 +321,60 @@ strong { color: var(--accent); font-weight: 600; }
   .post-feed__date { text-align: left; padding-top: 0; margin-bottom: 7px; }
 }
 
+/* ===== Notes（つぶやき） ===== */
+.notes {
+  display: grid;
+  grid-template-columns: minmax(0, 108px) 1fr;
+}
+.notes__label {
+  text-align: right;
+  padding-right: clamp(16px, 3vw, 30px);
+  font-family: var(--font-en);
+  font-size: 1.02rem;
+  font-weight: 600;
+  letter-spacing: .01em;
+  color: var(--accent);
+  line-height: 1.5;
+}
+.notes__body {
+  border-left: 1px solid var(--accent);
+  padding-left: clamp(20px, 4vw, 44px);
+  padding-bottom: 8px;
+}
+.note-feed { list-style: none; margin: 0; padding: 0; }
+.note-feed__item + .note-feed__item {
+  margin-top: clamp(28px, 4vw, 40px);
+  padding-top: clamp(28px, 4vw, 40px);
+  border-top: 1px solid var(--line);
+}
+.note-feed__date {
+  display: block;
+  font-family: var(--font-en);
+  font-size: .76rem;
+  font-weight: 500;
+  letter-spacing: .08em;
+  color: var(--accent);
+  margin-bottom: 9px;
+}
+.note-feed__text {
+  max-width: 42em;
+  font-size: .97rem;
+  line-height: 1.9;
+  color: var(--ink);
+  word-break: auto-phrase;
+  text-wrap: pretty;
+}
+.note-feed__text > p { margin: 0 0 14px; }
+.note-feed__text > p:last-child { margin-bottom: 0; }
+.note-feed__text a { color: var(--ink); text-decoration: underline; }
+.note-feed__empty { color: var(--ink-faint); font-size: .95rem; }
+
+@media (max-width: 680px) {
+  .notes { grid-template-columns: 1fr; }
+  .notes__label { text-align: left; padding-right: 0; margin-bottom: 18px; }
+  .notes__body { border-left: none; padding-left: 0; }
+}
+
 /* 旧ヒーローで使っていたSNSアイコン列は、フッターで引き続き使用 */
 .hf-social { display: flex; align-items: center; gap: 16px; }
 .hf-social a {

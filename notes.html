@@ -1,0 +1,28 @@
+---
+layout: default
+title: Notes
+nav: notes
+permalink: /notes/
+desc: 上野裕太郎（Yutaro UENO）の短いメモ。読書や研究のあいだに考えたことの断片。
+---
+  <main class="home">
+    <section class="notes">
+      <h1 class="notes__label">Notes</h1>
+      <div class="notes__body">
+{% assign notes = site.notes | sort: "date" | reverse %}
+{% if notes.size > 0 %}        <ul class="note-feed">
+{% for n in notes %}          <li class="note-feed__item">
+            <time class="note-feed__date" datetime="{{ n.date | date_to_xmlschema }}">{{ n.date | date: "%Y.%m.%d %H:%M" }}</time>
+            <div class="note-feed__text">{{ n.content | markdownify }}</div>
+          </li>
+{% endfor %}        </ul>
+{% else %}        <p class="note-feed__empty">まだつぶやきがありません。</p>
+{% endif %}      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="hf-social">
+      {% include social.html %}
+    </div>
+  </footer>
