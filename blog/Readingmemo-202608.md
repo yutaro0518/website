@@ -18,7 +18,7 @@ og_image: assets/readingmemo202608/ogppng.png
 ## 日本政治思想
 著：松沢弘陽／出版：岩波書店
 
-!["日本政治思想"書影](assets/readingmemo202608/seiji-shisou.png){: .cover}
+!["日本政治思想"書影](assets/readingmemo202608/seiji-shishou.png){: .cover}
 
 松沢弘陽氏の放送大学での授業を元にしたテクスト。帯にも書いているが、日本における「思想の不在」を憂い、そして問題意識を持ち、「日本政治思想」を確立するために奮闘した思想家の”思想”とその系譜が丁寧かつ、分かりやすくまとめられている1冊。
 
@@ -33,7 +33,7 @@ og_image: assets/readingmemo202608/ogppng.png
 ## 不平等の再検討
 著：アマルティア・セン／出版：岩波書店
 
-!["Inequality-Reexamined"書影](assets/readingmemo202608/Inequality-Reexamined.png)
+!["Inequality-Reexamined"書影](assets/readingmemo202608/Inequality-Reexamined.png){: .cover}
 {: .cover}
 
 人間の能力って何だろう、能力に応じてできることもあれば、できないこともあるよなみたいなことを考えていた時に、ちゃんと読まねばということで改めて手に取った1冊。
@@ -49,7 +49,7 @@ og_image: assets/readingmemo202608/ogppng.png
 ## 明六社
 著：河野有理／出版：中央公論新社
 
-!["Meirokusha"書影](assets/readingmemo202608/Meirokusha.png)
+!["Meirokusha"書影](assets/readingmemo202608/Meirokusha.png){: .cover}
 {: .cover}
 
 日本政治思想でも言及されていた福沢諭吉について、そして明六社について理解しておきたいなと思って手に取った1冊。
@@ -61,7 +61,7 @@ og_image: assets/readingmemo202608/ogppng.png
 ## 海辺のカフカ
 著：村上春樹／出版：新潮社
 
-!["Kafka-on-the-Shore"書影](assets/readingmemo202608/Kafka-on-the-Shore.png)
+!["Kafka-on-the-Shore"書影](assets/readingmemo202608/Kafka-on-the-Shore.png){: .cover}
 {: .cover}
 
 ちょっとプライベートで悲しいことがあったので逃避も兼ねて『海辺のカフカ』に。僕のジェンダーにかかわらず年上の方が好きな感じがこの本を読むと手に取るような実感として振ってくる。とくにさくら。完全に「カフカくん」って呼ばれたいだけ。
