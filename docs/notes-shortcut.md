@@ -28,7 +28,35 @@ The token is shown only once. Copy it now; you'll paste it in step 2⑤.
 
 ---
 
-## 2. Build the shortcut
+## 2. Get the shortcut
+
+Two ways. Try the ready-made file first; fall back to building it by hand if the
+import fails.
+
+### Option A — import the ready-made file
+
+`docs/Post to Notes.shortcut` in this repo is the finished shortcut, **signed**
+so iOS will open it directly. No settings to change.
+
+1. Get the file onto the phone — AirDrop from the Mac is easiest.
+2. Open it. Shortcuts will ask **"Paste your GitHub token"** during import —
+   paste the token from step 1 there.
+3. Skip to section 3.
+
+> **iOS only opens signed shortcut files.** If you ever regenerate this file, or
+> edit it on a Mac, sign it again before sending it to a phone:
+>
+> ```bash
+> shortcuts sign --mode anyone --input unsigned.shortcut --output signed.shortcut
+> ```
+>
+> An unsigned file fails with *"Shortcut cannot be opened"*. A signed file
+> starts with the bytes `AEA1`; an unsigned one starts with `bplist` or `<?xml`.
+
+If the file still refuses to import, build it by hand with Option B — the result
+is identical.
+
+### Option B — build it by hand
 
 Open the **Shortcuts** app, create a new shortcut, and add these actions in order.
 
@@ -43,9 +71,12 @@ Open the **Shortcuts** app, create a new shortcut, and add these actions in orde
 
 ### ② Prepare the date
 
-Add **Date** (it defaults to the current date).
+Add **Date** once (it defaults to the current date).
 
-Then add **Format Date** twice — you'll use each one in a different place.
+Then add **Format Date** twice. **In each one, set the input explicitly to the
+`Current Date` variable from the Date action** — don't rely on it picking up the
+previous action automatically. Leaving it implicit is what produced empty dates
+and a file literally named `.md`.
 
 | | Date Format | Format String | Used for |
 |---|---|---|---|
@@ -89,7 +120,7 @@ type the text, then tap the variable bar above the keyboard to insert them.
 **URL** — insert `Formatted Date B` (from ②B) where shown:
 
 ```
-https://api.github.com/repos/yutaro0518/website/contents/_notes/[Formatted Date B].md
+https://api.github.com/repos/yutaro0518/website/contents/_notes/note-[Formatted Date B].md
 ```
 
 **Method:** `PUT`
@@ -136,6 +167,7 @@ If nothing shows up, look at `_notes/` first — that tells you which half faile
 
 | Symptom | Cause |
 |---|---|
+| File is named `.md` and the note never appears | The date variables resolved to empty — set the input of each **Format Date** explicitly to `Current Date` |
 | No file in `_notes/` | Token permissions (needs Contents: Read and write), or the repo name in the URL |
 | File exists but the page doesn't show it | Pages is still building, or the `date:` format is wrong |
 | Text is garbled or cut off | Line Breaks in ④ isn't set to None |
