@@ -92,10 +92,15 @@ Add a **Text** action containing exactly these four lines:
 
 ```
 ---
-date: [Formatted Date A]
+posted: [Formatted Date A]
 ---
 [Provided Input]
 ```
+
+> The field is `posted`, **not** `date`. `date` is reserved by Jekyll: if it is
+> present but empty, the build fails at read time with *"Invalid date"* and the
+> whole site stops deploying. `posted` is an ordinary field, so an empty value
+> is harmless — the note just shows without a timestamp.
 
 Insert `Formatted Date A` (from ②A) and `Provided Input` (from ①) as variables —
 type the text, then tap the variable bar above the keyboard to insert them.
@@ -169,7 +174,7 @@ If nothing shows up, look at `_notes/` first — that tells you which half faile
 |---|---|
 | File is named `.md` and the note never appears | The date variables resolved to empty — set the input of each **Format Date** explicitly to `Current Date` |
 | No file in `_notes/` | Token permissions (needs Contents: Read and write), or the repo name in the URL |
-| File exists but the page doesn't show it | Pages is still building, or the `date:` format is wrong |
+| File exists but the page doesn't show it | Pages is still building |
 | Text is garbled or cut off | Line Breaks in ④ isn't set to None |
 | `401` / `403` response | Token expired, revoked, or missing the `Bearer ` prefix |
 | `404` response | Wrong repo path in the URL, or the token can't see the repo |
@@ -183,5 +188,5 @@ If nothing shows up, look at `_notes/` first — that tells you which half faile
   through the normal PR flow.
 - To delete a note, delete its file on GitHub. It stays in the git history.
 - The body is Markdown, so links and emphasis work.
-- Filenames only need to be unique — ordering comes from the `date:` field in
-  the file, not the filename.
+- Filenames only need to be unique — ordering comes from the `posted:` field
+  in the file, not the filename.
