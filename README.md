@@ -58,6 +58,27 @@ thumbnail: assets/xxx.jpeg  # blog/assets/ に置いた画像（任意）
 > - `thumbnail` は `blog/assets/` 内の実ファイル名と拡張子まで一致させる
 > - ファイル名がそのまま URL になります（例: `2026-08-01-my-post.md` → `/blog/2026-08-01-my-post/`）
 
+## つぶやき（Notes）を投稿する
+
+`/notes/` に時系列で並ぶ短文メモ。**1つぶやき＝`_notes/` 内の1ファイル**。
+
+```markdown
+---
+date: 2026-09-08 21:00
+---
+本文。Markdown が使えるのでリンクも貼れる。
+```
+
+ファイル名は何でもよいが、`YYYY-MM-DD-HHMM.md` にしておくと重複しない。
+並び順は frontmatter の `date` を見ているので、ファイル名は表示に影響しない。
+
+### iPhone から投稿する
+
+ショートカットから GitHub API を叩いて `_notes/` にファイルを1つ作る。
+サーバー不要。`main` に直接コミットされ、数分で公開される（PRは経由しない）。
+
+セットアップ手順は `docs/notes-shortcut.md` を参照。
+
 ## ページ本文を直す
 
 - About / Research → `about.md` / `research.md` の本文を Markdown で編集
