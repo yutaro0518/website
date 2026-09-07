@@ -35,18 +35,26 @@ import fails.
 
 ### Option A — import the ready-made file
 
-`docs/Post to Notes.shortcut` in this repo is the finished shortcut.
+`docs/Post to Notes.shortcut` in this repo is the finished shortcut, **signed**
+so iOS will open it directly. No settings to change.
 
-1. On the iPhone, open **Settings → Shortcuts** and turn on
-   **Allow Untrusted Shortcuts**. (The toggle only appears after you have run at
-   least one shortcut on the device.)
-2. Get the file onto the phone — AirDrop from the Mac is easiest.
-3. Open it. Shortcuts will ask **"Paste your GitHub token"** during import —
+1. Get the file onto the phone — AirDrop from the Mac is easiest.
+2. Open it. Shortcuts will ask **"Paste your GitHub token"** during import —
    paste the token from step 1 there.
-4. Skip to section 3.
+3. Skip to section 3.
 
-If the file refuses to import, or an action shows as broken, build it by hand
-with Option B — the result is identical.
+> **iOS only opens signed shortcut files.** If you ever regenerate this file, or
+> edit it on a Mac, sign it again before sending it to a phone:
+>
+> ```bash
+> shortcuts sign --mode anyone --input unsigned.shortcut --output signed.shortcut
+> ```
+>
+> An unsigned file fails with *"Shortcut cannot be opened"*. A signed file
+> starts with the bytes `AEA1`; an unsigned one starts with `bplist` or `<?xml`.
+
+If the file still refuses to import, build it by hand with Option B — the result
+is identical.
 
 ### Option B — build it by hand
 
