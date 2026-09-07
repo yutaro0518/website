@@ -1,118 +1,155 @@
-# iPhone のショートカットから Notes を投稿する
+# Posting Notes from iPhone
 
-ホーム画面のアイコンを押す → 文章を入力 → 送信、で `/notes/` に公開される。
-サーバーは使わない。GitHub の API を直接叩いて `_notes/` にファイルを1つ作るだけ。
+Tap an icon on the Home Screen, type a thought, send — it appears on `/notes/`.
+
+No server involved. The shortcut calls the GitHub API directly and creates one
+file in `_notes/`. Action names below are the English ones shown in the
+Shortcuts app; if your iPhone is set to another language, look for the
+equivalent action.
 
 ---
 
-## 1. アクセストークンを作る
+## 1. Create an access token
 
-GitHub の [Fine-grained personal access token](https://github.com/settings/personal-access-tokens/new) を作る。
+Create a [fine-grained personal access token](https://github.com/settings/personal-access-tokens/new) on GitHub.
 
-| 項目 | 設定 |
+| Field | Value |
 |---|---|
-| Token name | `notes-shortcut` など |
-| Expiration | 好みで（切れたら作り直す。無期限にしない） |
-| Repository access | **Only select repositories** → `yutaro0518/website` だけ |
-| Permissions | **Contents** を **Read and write** に。他は触らない |
+| Token name | `notes-shortcut` |
+| Expiration | Your choice — set one, don't pick "No expiration" |
+| Repository access | **Only select repositories** → `yutaro0518/website` |
+| Permissions | **Contents** → **Read and write**. Leave everything else alone |
 
-生成されたトークンは一度しか表示されない。次の手順ですぐ使うので、その場でコピーしておく。
+The token is shown only once. Copy it now; you'll paste it in step 2⑤.
 
-> このトークンはこのリポジトリのファイルを書き換える権限を持つ。
-> スクリーンショットに写さない、他人に渡さない、チャットに貼らない。
-> 漏れたと思ったら GitHub の設定画面から即 Revoke すれば無効化できる。
+> This token can write files to the repository. Don't put it in screenshots,
+> don't paste it into chats, don't share it. If it ever leaks, open the token
+> settings on GitHub and click **Revoke** — that kills it immediately.
 
 ---
 
-## 2. ショートカットを作る
+## 2. Build the shortcut
 
-iPhone の「ショートカット」アプリで新規作成し、次の順にアクションを並べる。
+Open the **Shortcuts** app, create a new shortcut, and add these actions in order.
 
-### ① 入力を受け取る
+### ① Ask for Input
 
-**「入力を要求」**
-- 入力の種類：`テキスト`
-- プロンプト：`いま考えていること`
+**Ask for Input**
 
-### ② 日時を用意する
+| Setting | Value |
+|---|---|
+| Input Type | `Text` |
+| Prompt | `What's on your mind?` |
 
-**「現在の日付」**
+### ② Prepare the date
 
-次に **「日付をフォーマット」** を2つ置く（あとで別々に使う）。
+Add **Date** (it defaults to the current date).
 
-- A：カスタム形式 `yyyy-MM-dd HH:mm` → 本文の `date:` に使う
-- B：カスタム形式 `yyyy-MM-dd-HHmmss` → ファイル名に使う
+Then add **Format Date** twice — you'll use each one in a different place.
 
-### ③ 本文を組み立てる
+| | Date Format | Format String | Used for |
+|---|---|---|---|
+| A | `Custom` | `yyyy-MM-dd HH:mm` | the `date:` line in the file |
+| B | `Custom` | `yyyy-MM-dd-HHmmss` | the filename |
 
-**「テキスト」** アクションに、次の4行を入力する。
-`【A】` の部分には②のフォーマットA、`【入力】` には①の結果を差し込む。
+> Tip: rename these two actions (long-press → Rename) to `Date A` and `Date B`
+> so you don't mix them up when inserting variables later.
+
+### ③ Build the file contents
+
+Add a **Text** action containing exactly these four lines:
 
 ```
 ---
-date: 【A】
+date: [Formatted Date A]
 ---
-【入力】
+[Provided Input]
 ```
 
-### ④ Base64 にする
+Insert `Formatted Date A` (from ②A) and `Provided Input` (from ①) as variables —
+type the text, then tap the variable bar above the keyboard to insert them.
 
-**「テキストをエンコード」**
-- エンコード：`Base64`
-- 入力：③のテキスト
-- **「改行しない」をオンにする**（オフだと途中で改行が入り、送信に失敗する）
+### ④ Base64 Encode
 
-### ⑤ GitHub に送る
+**Base64 Encode**
 
-**「URLの内容を取得」**
-
-- URL（`【B】` に②のフォーマットBを差し込む）:
-  ```
-  https://api.github.com/repos/yutaro0518/website/contents/_notes/【B】.md
-  ```
-- 方法：`PUT`
-- ヘッダ：
-  | キー | 値 |
-  |---|---|
-  | `Authorization` | `Bearer 【1で作ったトークン】` |
-  | `Accept` | `application/vnd.github+json` |
-- 本文を要求：`JSON`
-  | キー | 型 | 値 |
-  |---|---|---|
-  | `message` | テキスト | `note` |
-  | `content` | テキスト | ④のエンコード結果 |
-
-### ⑥ 完了を知らせる（任意）
-
-**「通知を表示」** に `投稿しました` など。
-
----
-
-## 3. ホーム画面に置く
-
-ショートカットの詳細画面 → 共有 → **「ホーム画面に追加」**。
-アイコンを押すだけで投稿できるようになる。
-
----
-
-## 動作の確認
-
-1. ショートカットを実行して適当な文章を送る
-2. GitHub の `_notes/` に新しいファイルができていることを確認
-3. 数分待って <https://yutaro0518.com/notes/> を開く
-
-出てこないときは、まず `_notes/` にファイルができているかを見る。
-
-| 症状 | 原因 |
+| Setting | Value |
 |---|---|
-| ファイルができていない | トークンの権限（Contents: Read and write）か、URLのリポジトリ名 |
-| ファイルはあるが表示されない | Pages のビルド待ち。または `date:` の書式が違う |
-| 本文が文字化け・途中で切れる | ④の「改行しない」がオフになっている |
+| Input | the **Text** from ③ |
+| Line Breaks | **None** |
+
+> **Line Breaks must be None.** If it's set to every 64 or 76 characters, the
+> encoded string gets newlines in it and GitHub rejects the request or stores a
+> broken file. This is the single most common thing to get wrong here.
+
+### ⑤ Send it to GitHub
+
+**Get Contents of URL**
+
+**URL** — insert `Formatted Date B` (from ②B) where shown:
+
+```
+https://api.github.com/repos/yutaro0518/website/contents/_notes/[Formatted Date B].md
+```
+
+**Method:** `PUT`
+
+**Headers:**
+
+| Key | Value |
+|---|---|
+| `Authorization` | `Bearer YOUR_TOKEN_FROM_STEP_1` |
+| `Accept` | `application/vnd.github+json` |
+| `X-GitHub-Api-Version` | `2022-11-28` |
+
+**Request Body:** `JSON`
+
+| Key | Type | Value |
+|---|---|---|
+| `message` | Text | `note` |
+| `content` | Text | the **Base64 Encoded** result from ④ |
+
+> Don't add a `sha` field. It's only needed when replacing an existing file, and
+> every note creates a new one.
+
+### ⑥ Confirm (optional)
+
+**Show Notification** with something like `Posted`.
 
 ---
 
-## 補足
+## 3. Put it on the Home Screen
 
-- **`main` に直接コミットされる。** PRは経由しない。つぶやき1件ごとにPRを出すのは現実的でないため、意図的にそうしている
-- 消したいときは GitHub 上で該当ファイルを削除すれば消える（git の履歴には残る）
-- 本文は Markdown が使えるので、リンクや強調もそのまま書ける
+Open the shortcut's detail view → Share → **Add to Home Screen**.
+
+Now one tap opens the prompt and posts.
+
+---
+
+## Checking that it works
+
+1. Run the shortcut and send a test line
+2. Check that a new file appeared in `_notes/` on GitHub
+3. Wait a few minutes, then open <https://yutaro0518.com/notes/>
+
+If nothing shows up, look at `_notes/` first — that tells you which half failed.
+
+| Symptom | Cause |
+|---|---|
+| No file in `_notes/` | Token permissions (needs Contents: Read and write), or the repo name in the URL |
+| File exists but the page doesn't show it | Pages is still building, or the `date:` format is wrong |
+| Text is garbled or cut off | Line Breaks in ④ isn't set to None |
+| `401` / `403` response | Token expired, revoked, or missing the `Bearer ` prefix |
+| `404` response | Wrong repo path in the URL, or the token can't see the repo |
+
+---
+
+## Notes on the setup
+
+- **This commits straight to `main`.** No pull request. Opening a PR for every
+  one-line thought isn't practical, so this is deliberate. Blog posts still go
+  through the normal PR flow.
+- To delete a note, delete its file on GitHub. It stays in the git history.
+- The body is Markdown, so links and emphasis work.
+- Filenames only need to be unique — ordering comes from the `date:` field in
+  the file, not the filename.
