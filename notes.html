@@ -11,8 +11,14 @@ desc: 上野裕太郎（Yutaro UENO）の短いメモ。読書や研究のあい
       <div class="notes__body">
 {% assign notes = site.notes | sort: "date" | reverse %}
 {% if notes.size > 0 %}        <ul class="note-feed">
+{% comment %}
+  date が空でも表示は落とさない。ショートカット側の不具合で date が
+  入らなかったとき、つぶやきが黙って消えるより日付なしで出したほうがよい。
+{% endcomment %}
 {% for n in notes %}          <li class="note-feed__item">
-            <time class="note-feed__date" datetime="{{ n.date | date_to_xmlschema }}">{{ n.date | date: "%Y.%m.%d %H:%M" }}</time>
+{% if n.date %}            <time class="note-feed__date" datetime="{{ n.date | date_to_xmlschema }}">{{ n.date | date: "%Y.%m.%d %H:%M" }}</time>
+{% else %}            <span class="note-feed__date note-feed__date--missing">日付なし</span>
+{% endif %}
             <div class="note-feed__text">{{ n.content | markdownify }}</div>
           </li>
 {% endfor %}        </ul>
