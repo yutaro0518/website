@@ -47,6 +47,7 @@ defaults:
 # Jekyll の出力に含めないもの
 exclude:
   - README.md
+  - docs          # 運用手順・ショートカット。サイトには公開しない
   - requirements.txt
   - Gemfile
   - Gemfile.lock
