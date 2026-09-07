@@ -5,28 +5,31 @@ nav: notes
 permalink: /notes/
 desc: 上野裕太郎（Yutaro UENO）の短いメモ。読書や研究のあいだに考えたことの断片。
 ---
-  <main class="home">
-    <section class="notes">
-      <h1 class="notes__label">Notes</h1>
-      <div class="notes__body">
-{% assign notes = site.notes | sort: "posted" | reverse %}
-{% if notes.size > 0 %}        <ul class="note-feed">
+  <main class="notes-page">
+    <h1 class="notes-page__title">Notes</h1>
+
 {% comment %}
   日時は posted に入れる。Jekyll の予約フィールド date に空の値が入ると
   「Invalid date」で読み込み時点でビルドが落ちるため、あえて別名にしている。
-  posted なら空でも nil として無視され、ここで日付なし表示に落ちるだけで済む。
+  posted なら空でも nil として無視され、日付なし表示に落ちるだけで済む。
+
+  並び順は posted の降順（新しいものが上）。posted の無いものは sort で
+  先頭に来るため、reverse 後は末尾に落ちる。
 {% endcomment %}
-{% for n in notes %}          <li class="note-feed__item">
-{% if n.posted %}            <time class="note-feed__date" datetime="{{ n.posted | date_to_xmlschema }}">{{ n.posted | date: "%Y.%m.%d %H:%M" }}</time>
-{% else %}            <span class="note-feed__date note-feed__date--missing">日付なし</span>
+{% assign notes = site.notes | sort: "posted" | reverse %}
+{% if notes.size > 0 %}    <ul class="tweets">
+{% for n in notes %}      <li class="tweet">
+        <div class="tweet__main">
+{% if n.posted %}          <div class="tweet__head">
+            <time class="tweet__time" datetime="{{ n.posted | date_to_xmlschema }}" title="{{ n.posted | date: '%Y年%-m月%-d日 %H:%M' }}">{{ n.posted | date: "%-m月%-d日" }}</time>
+          </div>
 {% endif %}
-            <div class="note-feed__text">{{ n.content | markdownify }}</div>
-          </li>
-{% endfor %}        </ul>
-{% else %}        <p class="note-feed__empty">まだつぶやきがありません。</p>
-{% endif %}      </div>
-    </section>
-  </main>
+          <div class="tweet__body">{{ n.content | markdownify }}</div>
+        </div>
+      </li>
+{% endfor %}    </ul>
+{% else %}    <p class="tweets__empty">まだつぶやきがありません。</p>
+{% endif %}  </main>
 
   <footer class="site-footer">
     <div class="hf-social">
