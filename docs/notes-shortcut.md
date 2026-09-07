@@ -28,7 +28,27 @@ The token is shown only once. Copy it now; you'll paste it in step 2⑤.
 
 ---
 
-## 2. Build the shortcut
+## 2. Get the shortcut
+
+Two ways. Try the ready-made file first; fall back to building it by hand if the
+import fails.
+
+### Option A — import the ready-made file
+
+`docs/Post to Notes.shortcut` in this repo is the finished shortcut.
+
+1. On the iPhone, open **Settings → Shortcuts** and turn on
+   **Allow Untrusted Shortcuts**. (The toggle only appears after you have run at
+   least one shortcut on the device.)
+2. Get the file onto the phone — AirDrop from the Mac is easiest.
+3. Open it. Shortcuts will ask **"Paste your GitHub token"** during import —
+   paste the token from step 1 there.
+4. Skip to section 3.
+
+If the file refuses to import, or an action shows as broken, build it by hand
+with Option B — the result is identical.
+
+### Option B — build it by hand
 
 Open the **Shortcuts** app, create a new shortcut, and add these actions in order.
 
