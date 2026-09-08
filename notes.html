@@ -21,7 +21,7 @@ desc: 上野裕太郎（Yutaro UENO）の短いメモ。読書や研究のあい
 {% for n in notes %}      <li class="tweet">
         <div class="tweet__main">
 {% if n.posted %}          <div class="tweet__head">
-            <time class="tweet__time" datetime="{{ n.posted | date_to_xmlschema }}" title="{{ n.posted | date: '%Y年%-m月%-d日 %H:%M' }}">{{ n.posted | date: "%-m月%-d日" }}</time>
+            <time class="tweet__time" datetime="{{ n.posted | date_to_xmlschema }}" title="{{ n.posted | date: '%Y年%-m月%-d日 %H:%M' }}">{{ n.posted | date: "%Y.%m.%d %H:%M" }}</time>
           </div>
 {% endif %}
           <div class="tweet__body">{{ n.content | markdownify }}</div>
