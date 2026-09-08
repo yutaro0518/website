@@ -8,8 +8,8 @@
   --ink-soft: #55554d;
   --ink-faint: #8a8a80;
   --line: #e6e6e0;
-  --accent: #c8503c;      /* warm terracotta */
-  --accent-soft: #f3e4df;
+  --accent: #2D3E78;      /* deep navy */
+  --accent-soft: #E9EBF2;
   --shadow: rgba(20,20,15,.09);
   --max: 1120px;
   --pad: clamp(20px, 5vw, 64px);
@@ -28,8 +28,8 @@
   --ink-soft: #bdbcb3;
   --ink-faint: #8a897f;
   --line: #302f2a;
-  --accent: #e0715c;
-  --accent-soft: #3a2420;
+  --accent: #7286CA;      /* ダークでは同色相を明るく（背景に沈まないように）*/
+  --accent-soft: #1F2333;
   --shadow: rgba(0,0,0,.45);
   color-scheme: dark;
 }
