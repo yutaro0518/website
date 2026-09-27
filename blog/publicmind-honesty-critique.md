@@ -1,5 +1,5 @@
 ---
-title: "公共心、正直さ、そして言論空間"
+title: "公共心・正直さ・言論空間"
 date: 2026-09-27
 category: "Essay"
 og_image: assets/publicmind-honesty-critique/publicmind-honesty-critique.png
