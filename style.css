@@ -365,7 +365,7 @@ strong { color: var(--accent); font-weight: 600; }
   font-size: .97rem;
   line-height: 1.75;
   color: var(--ink);
-  word-break: auto-phrase;
+  line-break: strict;
   text-wrap: pretty;
 }
 .tweet__body > p { margin: 0 0 10px; }
@@ -392,15 +392,20 @@ strong { color: var(--accent); font-weight: 600; }
   .home-intro { flex-direction: column; align-items: flex-start; gap: 22px; }
 }
 
-/* 日本語の改行位置を文節単位に寄せ、語の途中で割れるのを防ぐ。
-   auto-phrase 非対応ブラウザ（Firefox 等）では従来どおりの折り返しに戻るだけ */
+/* 日本語の本文は、語の途中で改行してよい（書籍・新聞と同じ組み方）。
+   禁則処理を strict にして、行頭に句読点や小書き仮名が来ないようにする。
+
+   かつて word-break: auto-phrase を当てていたが、長文では「文節の途中で
+   切らない」制約のせいで行末が大きく余り、右端がガタガタになった。
+   文節単位の制御は、トップのリード文1文だけに限定している
+   （home.html 側で span を使って明示的に指定）。*/
 .home-intro__text p,
 .post-feed__ex,
 .page-prose p,
 .page-prose li,
 .article__body p,
 .article__body li {
-  word-break: auto-phrase;
+  line-break: strict;
   text-wrap: pretty;
 }
 
